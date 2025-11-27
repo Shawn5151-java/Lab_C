@@ -1,11 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>飛瑞租車</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Microsoft JhengHei", Arial, sans-serif;
+            /* 加上微軟正黑體會比較好看 */
+        }
+
+        .header {
+            /* 修改配色：柔和的莫蘭迪綠 */
+            background-color: rgb(94, 190, 175);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 10px 20px;
+            /* 稍微增加左右間距 */
+            box-sizing: border-box;
+            /* 移除了 border-radius，讓它貼齊邊緣更像正式網頁 Header */
+        }
+
+        /* --- Logo 樣式 (從 HTML 移過來的) --- */
+        .logo-img {
+            width: 200px;
+            height: 60px;
+            object-fit: contain;
+            display: block;
+            /* 消除圖片下方的微小空隙 */
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            gap: 20px;
+        }
+
+        nav ul li {
+            cursor: pointer;
+            color: white;
+            font-weight: bold;
+            white-space: nowrap;
+            transition: color 0.3s ease;
+            /* 增加文字變色動畫 */
+        }
+
+        /* 導覽列文字滑鼠移過去的效果 (選用，增加互動感) */
+        nav ul li:hover {
+            color: #eefbfb;
+        }
+
+        /* --- 按鈕樣式 --- */
+        .header button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background-color: white;
+            border: none;
+            padding: 8px 16px;
+            /* 稍微調整內距讓按鈕大器一點 */
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            /* 字體顏色跟背景呼應 */
+            color: rgb(94, 190, 175);
+            transition: all 0.3s ease;
+        }
+
+        /* --- 圖片樣式 --- */
+        .header button img {
+            width: 18px;
+            /*稍微縮小一點點圖示，讓文字更凸顯*/
+            height: 18px;
+            object-fit: contain;
+        }
+
+        /* --- 滑鼠懸停效果 --- */
+        .header button:hover {
+            /* 漸層：從原本的莫蘭迪綠 -> 柔和灰藍 */
+            background-image: linear-gradient(to right, rgb(94, 190, 175), rgb(108, 166, 193));
+            color: white;
+            /* 陰影效果：讓按鈕浮起來的感覺 (選用) */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- 響應式設定 (手機版) --- */
+        @media (max-width: 768px) {
+
+            /* 1. 隱藏文字 */
+            .header button span {
+                display: none;
+            }
+
+            /* 2. 按鈕變圓形圖示 */
+            .header button {
+                padding: 0;
+                /* 清除內距，方便置中 */
+                border-radius: 50%;
+                width: 40px;
+                /* 手機版按鈕稍微大一點點比較好按 */
+                height: 40px;
+            }
+
+            /* 3. 修正圓形按鈕內的圖片位置 */
+            .header button img {
+                width: 20px;
+                height: 20px;
+                margin: 0;
+                /* 確保沒有多餘邊距 */
+
+            }
+
+            .header button:hover img {
+                filter: brightness(0) invert(1);
+            }
+
+            /* 4. 手機版 Logo 縮小，避免擠壓到按鈕 */
+            .logo-img {
+                width: 140px;
+                height: auto;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h1>測試內容</h1>
+    <div class="header">
+        <div>
+            <a href="#">
+                <img class="logo-img" src="/img/removebackground1764241665000.png" alt="logo">
+            </a>
+        </div>
+
+        <div>
+            <nav>
+                <ul>
+                    <li>最新消息</li>
+                    <li>車款介紹</li>
+                    <li>常見問題</li>
+                    <li>品牌故事</li>
+                </ul>
+            </nav>
+        </div>
+
+        <div style="display: flex;">
+            <button>
+                <img src="/img/login2.png" alt="註冊icon">
+                <span>會員註冊</span>
+            </button>
+            <button>
+                <img src="/img/person2.png" alt="登入icon">
+                <span>會員登入</span>
+            </button>
+        </div>
+    </div>
 </body>
+
 </html>
