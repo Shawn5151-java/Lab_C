@@ -1,0 +1,155 @@
+/* --- 最新消息區塊 CSS --- */
+
+.news-section {
+    width: 90%;
+    max-width: 1000px;
+    margin: 100px auto 50px auto; /* 上方留 100px 避免被預約框蓋住 */
+    font-family: "Microsoft JhengHei", sans-serif;
+}
+
+/* 標題樣式 */
+.section-title {
+    font-size: 28px;
+    color: #4C585B; /* 岩石灰 */
+    border-left: 5px solid #7E99A3; /* 左邊加一條莫蘭迪藍的線 */
+    padding-left: 15px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.en-title {
+    font-size: 14px;
+    color: #999;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+
+/* 消息列表容器 */
+.news-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* 每一則消息的間距 */
+}
+
+/* 單則消息卡片 */
+.news-item {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    text-decoration: none; /* 去除超連結底線 */
+    color: inherit;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* 滑鼠移過去的效果 */
+.news-item:hover {
+    transform: translateY(-3px); /* 微微浮起 */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-color: #7E99A3;
+}
+
+/* 左側日期方塊 */
+.news-date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #4C585B; /* 岩石灰背景 */
+    color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    margin-right: 25px;
+    flex-shrink: 0; /* 防止被擠壓 */
+    transition: background 0.3s;
+}
+
+.news-item:hover .news-date {
+    background-color: #7E99A3; /* 滑鼠移過去變莫蘭迪藍 */
+}
+
+.news-date .day {
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.news-date .month {
+    font-size: 12px;
+    margin-top: 5px;
+    opacity: 0.9;
+}
+
+/* 中間文字內容 */
+.news-content {
+    flex: 1; /* 佔據剩餘空間 */
+}
+
+.news-title {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.news-item:hover .news-title {
+    color: #7E99A3; /* 標題變色 */
+}
+
+.news-desc {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    /* 限制顯示兩行，超出變吊鐘點... */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* 右側箭頭 */
+.news-arrow {
+    margin-left: 20px;
+    font-size: 20px;
+    color: #ccc;
+    font-weight: bold;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.news-item:hover .news-arrow {
+    color: #4C585B;
+    transform: translateX(5px); /* 往右移動 */
+}
+
+/* RWD 手機版調整 */
+@media (max-width: 768px) {
+    .news-item {
+        flex-direction: column; /* 改為垂直排列 */
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .news-date {
+        width: 100%;
+        height: 40px;
+        flex-direction: row; /* 日期改橫排 */
+        gap: 10px;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    
+    .news-date .day { font-size: 20px; }
+    .news-date .month { margin-top: 0; }
+    
+    .news-arrow {
+        display: none; /* 手機版隱藏箭頭，比較乾淨 */
+    }
+}

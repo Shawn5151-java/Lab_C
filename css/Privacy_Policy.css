@@ -1,0 +1,121 @@
+/* --- 隱私權政策頁面樣式 --- */
+
+.privacy-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    /* 輕微陰影增加質感 */
+    border-radius: 10px;
+    font-family: "Microsoft JhengHei", sans-serif;
+    color: #333;
+    line-height: 1.8;
+}
+
+/* 頁面標題區 */
+.privacy-header {
+    text-align: center;
+    margin-bottom: 50px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 20px;
+}
+
+.privacy-header h1 {
+    color: #4C585B;
+    /* 岩石灰 */
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.last-updated {
+    color: #999;
+    font-size: 14px;
+}
+
+/* 內容區塊 */
+.privacy-content section {
+    margin-bottom: 40px;
+}
+
+/* 小標題 */
+.privacy-content h3 {
+    color: #4C585B;
+    /* 岩石灰 */
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding-left: 12px;
+    border-left: 5px solid #7E99A3;
+    /* 莫蘭迪藍裝飾線 */
+    line-height: 1.4;
+}
+
+/* 內文段落 */
+.privacy-content p {
+    color: #555;
+    margin-bottom: 15px;
+    text-align: justify;
+    /* 左右對齊 */
+}
+
+/* 列表樣式 */
+.privacy-content ul {
+    list-style-type: none;
+    /* 移除預設圓點 */
+    padding-left: 0;
+    margin-bottom: 15px;
+}
+
+.privacy-content ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* 自定義列表項目符號 */
+.privacy-content ul li::before {
+    content: "•";
+    color: #7E99A3;
+    /* 莫蘭迪藍 */
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* 重點強調 */
+.privacy-content strong {
+    color: #4C585B;
+}
+
+/* 聯絡資訊框 */
+.contact-box {
+    background-color: #F4EDD3;
+    /* 奶油白背景 */
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+    border: 1px solid #e0d8bf;
+}
+
+.contact-box p {
+    margin-bottom: 5px;
+    color: #4C585B;
+}
+
+/* RWD 手機版調整 */
+@media (max-width: 768px) {
+    .privacy-container {
+        width: 95%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .privacy-header h1 {
+        font-size: 24px;
+    }
+
+    .privacy-content h3 {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,166 @@
+.header {
+    background-color: rgb(76, 88, 91);
+    /* 您更新的岩石灰 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    /* 確保下拉選單不會被其他層遮住，如果有 Banner 的話 */
+    position: relative;
+    z-index: 1000;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    /* 讓點擊範圍變大 */
+}
+
+.logo-img {
+    width: 200px;
+    height: 60px;
+    object-fit: contain;
+    display: block;
+}
+
+/* --- 導覽列核心設定 (開始) --- */
+
+/* 第一層：主選單 */
+.drop-down-menu {
+    display: flex;
+    /* 讓主選單水平排列 */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+}
+
+/* 第一層的 li */
+.drop-down-menu>li {
+    position: relative;
+    /* 【關鍵】定位基準點 */
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    white-space: nowrap;
+    padding: 10px 0;
+    /* 增加緩衝區，滑鼠移動時比較穩 */
+    transition: color 0.3s ease;
+}
+
+/* 第一層滑鼠移過去變色 */
+.drop-down-menu>li:hover {
+    color: #d1e3e8;
+    /* 淺色一點的灰藍，搭配您的主色 */
+}
+
+/* --- 第二層：下拉式選單 (ul) --- */
+.drop-down-menu ul {
+    display: none;
+    /* 【關鍵】預設隱藏 */
+    position: absolute;
+    /* 【關鍵】浮動定位 */
+    top: 100%;
+    /* 在父層的正下方 */
+    left: 50%;
+    transform: translateX(-50%);
+    /* 水平置中 */
+
+    /* 外觀設定 */
+    background-color: white;
+    min-width: 140px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    /* 加一點陰影比較立體 */
+    padding: 5px 0;
+    z-index: 999;
+
+    /* 【重要】覆寫掉原本 nav ul 的設定，改成垂直排列 */
+    flex-direction: column;
+    gap: 0;
+    /* 移除原本的間距，由 li 的 padding 控制 */
+}
+
+/* --- 觸發開關：滑鼠移到主選單 li 時顯示子選單 --- */
+.drop-down-menu>li:hover ul {
+    display: flex;
+    /* 改為顯示 (繼承上面的 flex-direction: column) */
+}
+
+/* 下拉選單裡的 li 設定 */
+.drop-down-menu ul li {
+    width: 100%;
+    /* 填滿寬度 */
+    list-style: none;
+}
+
+/* 下拉選單裡的連結文字 */
+.drop-down-menu ul li a {
+    color: rgb(76, 88, 91);
+    /* 文字改回您的深灰色，因為背景是白的 */
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: normal;
+    /* 字體不用那麼粗 */
+    transition: background 0.2s;
+}
+
+/* 下拉選單項目滑鼠移過去 */
+.drop-down-menu ul li a:hover {
+    background-color: #f0f4f5;
+    /* 很淡的灰底色 */
+    color: rgb(58, 123, 190);
+    /* 藍色文字提示 */
+}
+
+/* --- 導覽列設定 (結束) --- */
+
+
+.header button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background-color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: rgb(76, 88, 91);
+    transition: all 0.3s ease;
+}
+
+.header button img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+.header button:hover {
+    background-image: linear-gradient(to right, rgb(86, 163, 220), rgb(58, 123, 190));
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .header button span {
+        display: none;
+    }
+
+    .header button {
+        padding: 0;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+    }
+
+    .header button img {
+        width: 20px;
+        height: 20px;
+        margin: 0;
+    }
+}

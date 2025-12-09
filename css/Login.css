@@ -1,0 +1,232 @@
+/* --- W3Schools Login Form 客製化樣式 --- */
+
+/* 1. 針對登入框內的 Input 做設定 (加上 .modal-content 避免影響到搜尋框) */
+.modal-content input[type=text],
+.modal-content input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 4px;
+    /* 加點圓角比較好看 */
+}
+
+/* 2. 登入按鈕 (改為莫蘭迪藍) */
+button.login-btn {
+    background-color: #7E99A3;
+    /* 您的主色 */
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+button.login-btn:hover {
+    background-color: #4C585B;
+    /* 滑鼠移過去變岩石灰 */
+}
+
+/* 3. 取消按鈕 (修改版：讓它跟註冊按鈕一樣高) */
+button.cancelbtn {
+    width: auto;
+    padding: 14px 20px;
+    /* 【修改】原本是 10px，改成 14px 跟註冊按鈕一樣高 */
+    background-color: #999;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    /* 【新增】統一字體大小 */
+    font-weight: bold;
+    /* 【新增】統一字體粗細 */
+    margin: 8px 0;
+    /* 【新增】統一邊距 */
+    transition: 0.3s;
+    /* 【新增】統一過場動畫 */
+}
+
+button.cancelbtn:hover {
+    background-color: #666;
+}
+
+/* 4. 頭像與關閉按鈕區域 */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+/* 5. 內距設定 */
+.container {
+    padding: 16px;
+}
+
+.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* 6. Modal 本體 (背景黑屏) */
+.modal {
+    display: none;
+    /* 預設隱藏 */
+    position: fixed;
+    z-index: 2000;
+    /* 【關鍵】要比 Header (1000) 還大，才會蓋在最上面 */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.6);
+    /* 半透明黑 */
+    padding-top: 60px;
+}
+
+/* 7. Modal 內容白框 */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto;
+    /* 5% from the top, centered */
+    border: 1px solid #888;
+    width: 90%;
+    /* 手機版寬度 */
+    max-width: 500px;
+    /* 電腦版最大寬度 */
+    border-radius: 10px;
+    /* 圓角 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 8. 右上角 X 關閉鈕 */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #7E99A3;
+    cursor: pointer;
+}
+
+/* 9. 進場動畫 (Zoom In) */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+/* 10. 手機版微調 */
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+
+    .cancelbtn {
+        width: 100%;
+    }
+}
+
+/* --- 修正底部對齊問題 --- */
+
+/* 1. 讓底部的灰色區塊變成彈性盒子 */
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+    /* 一個靠左，一個靠右 */
+    align-items: center;
+    /* 垂直置中對齊 */
+}
+
+/* 2. 修正右邊文字的設定 */
+span.psw {
+    float: none;
+    /* 取消浮動 (原本是 float: right) */
+    padding-top: 0;
+    /* 取消原本的上方留白 */
+    white-space: nowrap;
+    /* 強制文字不換行，確保「忘記密碼」在同一行 */
+}
+
+/* 3. 確保連結顏色好看一點 */
+span.psw a {
+    color: #7E99A3;
+    /* 莫蘭迪藍 */
+    text-decoration: none;
+}
+
+span.psw a:hover {
+    text-decoration: underline;
+}
+
+/* --- 註冊表單專用樣式 --- */
+
+/* 註冊按鈕 (莫蘭迪藍) */
+button.signupbtn {
+    background-color: #7E99A3;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+button.signupbtn:hover {
+    background-color: #4C585B;
+    /* 滑鼠移過去變岩石灰 */
+    opacity: 1;
+}
+
+/* 針對取消按鈕做個 RWD 微調 */
+@media screen and (max-width: 300px) {
+    .clearfix {
+        flex-direction: column;
+        /* 手機超窄螢幕時變垂直排列 */
+    }
+}

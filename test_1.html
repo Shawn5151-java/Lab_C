@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飛瑞租車</title>
+    <link rel="stylesheet" href="./css/Carousel.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/Booking.css">
+    <link rel="stylesheet" href="./css/Latest_news.css">
+    <link rel="stylesheet" href="./css/Footer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./css/Login.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/zh-tw.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/plugins/rangePlugin.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Microsoft JhengHei", Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div>
+            <a href="#">
+                <img class="logo-img" src="./img/newLOGO.jpg" alt="logo">
+            </a>
+        </div>
+
+        <div>
+            <nav>
+                <ul class="drop-down-menu">
+                    <li><a href="#">最新消息</a></li>
+                    <li>
+                        <a href="#">車款介紹 ▼</a>
+                        <ul>
+                            <li><a href="#">一般車型</a></li>
+                            <li><a href="#">尊榮車型</a></li>
+                            <li><a href="#">商用車型</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">常見問題</a></li>
+                    <li><a href="#">品牌故事</a></li>
+                    <li><a href="#">聯絡我們</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div style="display: flex; gap: 10px;">
+            <button onclick="document.getElementById('id02').style.display='block'">
+                <img src="/img/login2.png" alt="註冊icon">
+                <span>會員註冊</span>
+            </button>
+            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
+                <img src="/img/person2.png" alt="登入icon">
+                <span>會員登入</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 4</div>
+            <img src="./img/promotion1.jpg" style="width:100%">
+            <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 4</div>
+            <img src="./img/promotion2.jpg" style="width:100%">
+            <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 4</div>
+            <img src="./img/promotion3.jpg" style="width:100%">
+            <div class="text"></div>
+        </div>
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 4</div>
+            <img src="./img/promotion4.jpg" style="width:100%">
+            <div class="text"></div>
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </div>
+
+
+
+
+    <div class="booking-widget">
+        <div class="widget-tabs">
+            <div class="tab active" style="cursor: default;">立即預約</div>
+        </div>
+
+        <div class="widget-content">
+
+            <div class="form-row">
+                <div class="form-group location-group">
+                    <label>取還站點</label>
+                    <div class="input-wrapper">
+                        <span class="icon">📍</span>
+                        <select>
+                            <option>台北建北站</option>
+                            <option>台中高鐵站</option>
+                            <option>高雄左營站</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group date-group">
+                    <label>取車時間</label>
+                    <div class="datetime-wrapper">
+                        <input type="text" class="date-input" id="pickup-date" placeholder="選擇日期" readonly>
+                        <select class="time-input" id="pickup-time"></select>
+                    </div>
+                </div>
+
+                <div class="form-group date-group">
+                    <label>還車時間</label>
+                    <div class="datetime-wrapper">
+                        <input type="text" class="date-input" id="return-date" placeholder="選擇日期" readonly>
+                        <select class="time-input" id="return-time"></select>
+                    </div>
+                </div>
+
+                <button class="submit-btn">我想租車</button>
+            </div>
+            <div id="duration-display">
+                共計 <span id="total-days">0</span> 天 <span id="total-hours">0</span> 小時
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <div class="news-section">
+        <h2 class="section-title">最新消息 <span class="en-title">LATEST NEWS</span></h2>
+
+        <div class="news-container">
+            <a href="#" class="news-item">
+                <div class="news-date">
+                    <span class="day">9</span>
+                    <span class="month">2025.12</span>
+                </div>
+                <div class="news-content">
+                    <h3 class="news-title">【連假攻略】提早卡位最聰明！連假早鳥預訂最高現折 $2,000</h3>
+                    <p class="news-desc">連假出遊怕塞車又怕沒車租？提早 30 天預訂連續假期用車，不僅確保有車，還可享早鳥優惠價，最高現折 $2,000！</p>
+                </div>
+                <div class="news-arrow">→</div>
+            </a>
+            <a href="#" class="news-item">
+                <div class="news-date">
+                    <span class="day">10</span>
+                    <span class="month">2025.09</span>
+                </div>
+                <div class="news-content">
+                    <h3 class="news-title">全面升級車輛清潔消毒標準，讓您租得更安心</h3>
+                    <p class="news-desc">您的健康是我們最重視的。即日起所有還車車輛皆執行醫療級臭氧殺菌，並加強車內常接觸點的清潔擦拭。</p>
+                </div>
+                <div class="news-arrow">→</div>
+            </a>
+
+            <a href="#" class="news-item">
+                <div class="news-date">
+                    <span class="day">12</span>
+                    <span class="month">2025.01</span>
+                </div>
+                <div class="news-content">
+                    <h3 class="news-title">【重磅登場】未來已來！Audi e-tron GT 純電轎跑 榮耀入列</h3>
+                    <p class="news-desc">體驗電影《復仇者聯盟》鋼鐵人的極致座駕！飛瑞租車正式引進 Audi e-tron GT，擁有 800V 快充技術與 530 匹馬力，重新定義您的純電駕馭想像。
+                    </p>
+                </div>
+                <div class="news-arrow">→</div>
+            </a>
+            <a href="#" class="news-item">
+                <div class="news-date">
+                    <span class="day">28</span>
+                    <span class="month">2024.12</span>
+                </div>
+                <div class="news-content">
+                    <h3 class="news-title">【迎新禮遇】新會員首租享 7 折，開啟您的第一次完美旅程</h3>
+                    <p class="news-desc">歡迎加入飛瑞租車大家庭！即日起註冊成為新會員，首次租車不限車款、不限平假日，結帳立享 7 折優惠。立即註冊，體驗尊榮服務。</p>
+                </div>
+                <div class="news-arrow">→</div>
+            </a>
+        </div>
+    </div>
+
+
+    <footer class="site-footer">
+        <div class="footer-container">
+
+            <div class="footer-column">
+                <h3 class="footer-logo">飛瑞租車 <span style="font-size: 14px; font-weight: normal;">Fei Rui Car
+                        Rental</span></h3>
+                <p class="footer-desc">
+                    致力於提供最尊榮、舒適的駕駛體驗。<br>
+                    無論是商務出行還是家庭旅遊，<br>
+                    飛瑞租車都是您最值得信賴的夥伴。
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h4>快速連結</h4>
+                <ul class="footer-links">
+                    <li><a href="#">最新消息</a></li>
+                    <li><a href="#">車款介紹</a></li>
+                    <li><a href="#">常見問題</a></li>
+                    <li><a href="#">品牌故事</a></li>
+                    <li><a href="#">聯絡我們</a></li>
+                    <li><a href="./test_2.html">隱私權政策</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>聯絡我們</h4>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fa-solid fa-location-dot icon"></i>
+                        <span>台中市南屯區公益路二段 (旗艦店)</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone icon"></i>
+                        <span>0988-123-456</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-clock icon"></i>
+                        <span>週一至週日 09:00 - 21:00</span>
+                    </li>
+                </ul>
+
+                <div class="social-buttons">
+                    <a href="javascript:void(0)" class="social-btn" onclick="demoAlert('LINE')">
+                        <i class="fa-brands fa-line"></i>
+                    </a>
+                    <a href="javascript:void(0)" class="social-btn" onclick="demoAlert('Facebook')">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="javascript:void(0)" class="social-btn" onclick="demoAlert('Instagram')">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright-bar">
+            &copy; 2025 飛瑞租車 Fei Rui Car Rental. All Rights Reserved. <br>
+            (本網站為學術練習作品，無商業用途)
+        </div>
+    </footer>
+    <button onclick="topFunction()" id="myBtn" title="回到頂部">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- m3註冊教學 -->
+    <div id="id02" class="modal">
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="container">
+                <div class="imgcontainer" style="margin: 10px 0 20px 0;">
+                    <span onclick="document.getElementById('id02').style.display='none'" class="close"
+                        title="關閉視窗">&times;</span>
+                    <h2 style="color: #4C585B; margin-bottom: 5px;">註冊新會員</h2>
+                    <p style="color: #666; font-size: 14px;">請填寫以下資訊以建立帳號</p>
+                </div>
+
+                <hr style="border: 1px solid #eee; margin-bottom: 20px;">
+
+                <label for="email"><b>電子郵件</b></label>
+                <input type="text" placeholder="請輸入 Email" name="email" required class="login-input">
+
+                <label for="psw"><b>設定密碼</b></label>
+                <input type="password" placeholder="請輸入密碼" name="psw" required class="login-input">
+
+                <label for="psw-repeat"><b>確認密碼</b></label>
+                <input type="password" placeholder="請再次輸入密碼" name="psw-repeat" required class="login-input">
+
+                <label>
+                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> 記住我
+                </label>
+
+                <p style="font-size: 13px; color: #666;">
+                    建立帳號即代表您同意我們的 <a href="./test_2.html" style="color: #7E99A3;">隱私權政策與條款</a>
+                </p>
+
+                <div class="clearfix" style="display: flex; gap: 10px; margin-top: 20px;">
+                    <button type="button" onclick="document.getElementById('id02').style.display='none'"
+                        class="cancelbtn" style="flex:1;">取消</button>
+                    <button type="submit" class="signupbtn" style="flex:1;">註冊</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- m3登入教學 -->
+    <div id="id01" class="modal">
+
+        <form class="modal-content animate" action="/action_page.php" method="post">
+
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                    title="關閉視窗">&times;</span>
+                <img src="./img/person2.png" alt="Avatar" class="avatar" style="width: 50px; height: 50px;">
+                <h2 style="color: #4C585B; margin: 10px 0;">會員登入</h2>
+            </div>
+
+            <div class="container">
+                <label for="email"><b>電子郵件</b></label>
+                <input type="text" placeholder="請輸入帳號" name="uname" required class="login-input">
+
+                <label for="psw"><b>密碼</b></label>
+                <input type="password" placeholder="請輸入密碼" name="psw" required class="login-input">
+
+                <button type="submit" class="login-btn">登入</button>
+
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> 記住我
+                </label>
+            </div>
+
+            <div class="container"
+                style="background-color:#f1f1f1; border-radius: 0 0 10px 10px; display: flex; justify-content: space-between; align-items: center;">
+
+                <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                    class="cancelbtn">取消</button>
+
+                <span><a href="#" style="color: #7E99A3; text-decoration: none;">忘記密碼?</a>
+                </span>
+
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // 簡單的回到頂部 JS
+        let mybutton = document.getElementById("myBtn");
+
+        // 當捲動超過 20px 就顯示按鈕
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.opacity = "1";
+                mybutton.style.visibility = "visible";
+            } else {
+                mybutton.style.opacity = "0";
+                mybutton.style.visibility = "hidden";
+            }
+        }
+
+        // 點擊後平滑滾動到頂部
+        function topFunction() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+    <script>
+        function demoAlert(platform) {
+            alert("您點擊了 " + platform + "！\n(這是作業用網站，並無實際連結)");
+        }
+    </script>
+    <script>
+        // --- Modal 視窗控制 (登入 & 註冊) ---
+
+        // 取得 modal 元素
+        var loginModal = document.getElementById('id01');
+        var signupModal = document.getElementById('id02');
+
+        // 當使用者點擊視窗的任何地方
+        window.onclick = function (event) {
+            // 如果點到的是登入視窗的背景 -> 關閉登入
+            if (event.target == loginModal) {
+                loginModal.style.display = "none";
+            }
+            // 如果點到的是註冊視窗的背景 -> 關閉註冊
+            if (event.target == signupModal) {
+                signupModal.style.display = "none";
+            }
+        }
+    </script>
+
+
+    <script src="./js/Carousel.js"></script>
+    <script src="./js/Booking.js"></script>
+</body>
+
+</html>

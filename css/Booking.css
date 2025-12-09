@@ -1,0 +1,296 @@
+/* --- 預約模組容器 --- */
+.booking-widget {
+    background-color: transparent;
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    top: 50px;
+    font-family: "Microsoft JhengHei", sans-serif;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    /* 陰影稍微調淡一點，比較柔和 */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* --- 上方頁籤區 --- */
+.widget-tabs {
+    display: flex;
+}
+
+.widget-tabs .tab {
+    flex: 1;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    /* 未選取狀態：使用奶油白背景 + 岩石灰文字 */
+    background-color: #F4EDD3;
+    color: #4C585B;
+    transition: all 0.3s;
+}
+
+.widget-tabs .tab.active {
+    /* 選取狀態：使用岩石灰背景 + 奶油白文字 */
+    background-color: #4C585B;
+    color: #F4EDD3;
+}
+
+.widget-tabs .info-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    border-radius: 50%;
+    background-color: #A5BFCC;
+    /* 使用色票中的淺藍色 */
+    color: white;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+/* --- 下方內容區 --- */
+.widget-content {
+    background-color: white;
+    padding: 20px 30px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+    align-items: flex-end;
+    margin-bottom: 15px;
+}
+
+/* 通用標籤設定 */
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: #4C585B;
+    /* 改用岩石灰 */
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* 輸入框外框樣式 */
+.input-wrapper,
+.datetime-wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid #A5BFCC;
+    /* 邊框改用淺藍色 */
+    border-radius: 4px;
+    padding: 5px 10px;
+    height: 45px;
+    background-color: white;
+}
+
+/* --- 欄位個別設定 --- */
+.location-group {
+    flex: 2;
+}
+
+.location-group select {
+    border: none;
+    width: 100%;
+    font-size: 16px;
+    outline: none;
+    background: transparent;
+    color: #4C585B;
+    font-weight: bold;
+}
+
+.date-group {
+    flex: 1.5;
+}
+
+.datetime-wrapper input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #4C585B;
+    background: transparent;
+}
+
+/* 修改 Booking.css */
+.date-input {
+    width: 110px;
+    border-right: 1px solid #F4EDD3 !important;
+    margin-right: 10px;
+    cursor: pointer; /* 【新增】滑鼠移上去變手指，提示可點擊 */
+}
+
+/* 修改 .time-input 的樣式 */
+.time-input {
+    width: 80px;
+    border: none;
+    /* 去掉邊框 */
+    outline: none;
+    /* 去掉點擊時的藍框 */
+    background: transparent;
+    color: #4C585B;
+    /* 岩石灰 */
+    font-size: 16px;
+    /* 字體大小調整 */
+    font-family: inherit;
+    cursor: pointer;
+    appearance: none;
+    /* 【關鍵】隱藏瀏覽器預設的下拉箭頭，看起來比較乾淨 */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-align: center;
+    /* 文字置中 */
+}
+
+/* 如果您希望下拉選單有一個小箭頭提示，可以保留下面這段；如果不想要，可以忽略 */
+/* 這裡我們利用 CSS 技巧在右邊加個小箭頭，或者因為在 datetime-wrapper 裡，不加也可以 */
+
+/* --- 按鈕設定 --- */
+.submit-btn {
+    flex: 1;
+    /* 新增以下三行來保護按鈕 */
+    min-width: 120px;
+    /* 1. 設定最小寬度，死都不准小於這個寬度 */
+    white-space: nowrap;
+    /* 2. 禁止文字換行，確保「我想租車」在同一行 */
+    flex-shrink: 0;
+    /* 3. 禁止縮小，空間不夠時寧願破版也不要變形 (通常配合 RWD 就不會破版) */
+
+    /* 原本的設定 */
+    height: 45px;
+    background-color: #7E99A3;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+}
+
+.submit-btn:hover {
+    /* 滑鼠移過去變深色岩石灰 */
+    background-color: #4C585B;
+    color: #F4EDD3;
+}
+
+/* --- 底部連結 --- */
+.form-footer {
+    display: flex;
+    justify-content: flex-end;
+    /* 靠右對齊 */
+    align-items: center;
+    font-size: 14px;
+}
+
+.en-link {
+    color: #7E99A3;
+    /* 連結使用莫蘭迪藍 */
+    text-decoration: underline;
+}
+
+.en-link:hover {
+    color: #4C585B;
+}
+
+/* --- RWD 手機版 --- */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .location-group,
+    .date-group,
+    .submit-btn {
+        width: 100%;
+    }
+
+    .datetime-wrapper {
+        justify-content: space-between;
+    }
+}
+
+/* --- Flatpickr 日曆客製化 (配合格上租車風格) --- */
+
+/* 選中的日期圓圈 (開始與結束) - 使用岩石灰 */
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange,
+.flatpickr-day.selected.inRange,
+.flatpickr-day.startRange.inRange,
+.flatpickr-day.endRange.inRange,
+.flatpickr-day.selected:focus,
+.flatpickr-day.startRange:focus,
+.flatpickr-day.endRange:focus,
+.flatpickr-day.selected:hover,
+.flatpickr-day.startRange:hover,
+.flatpickr-day.endRange:hover {
+    background: #4C585B !important;
+    border-color: #4C585B !important;
+    color: #fff;
+    box-shadow: none !important;
+}
+
+/* 中間的區間範圍 - 使用淡淡的莫蘭迪藍 */
+.flatpickr-day.inRange {
+    background: #E8F0F2 !important;
+    /* 很淡的藍灰色 */
+    border-color: #E8F0F2 !important;
+    color: #4C585B !important;
+    box-shadow: -5px 0 0 #E8F0F2, 5px 0 0 #E8F0F2 !important;
+}
+
+/* 月份翻頁箭頭 */
+.flatpickr-months .flatpickr-prev-month:hover svg,
+.flatpickr-months .flatpickr-next-month:hover svg {
+    fill: #4C585B !important;
+}
+
+/* 今天的日期 (下方加個小點) */
+.flatpickr-day.today {
+    border-color: #7E99A3 !important;
+}
+
+.flatpickr-day.today:hover {
+    background: #7E99A3 !important;
+    color: white !important;
+}
+
+/* 調整一下 RWD，讓日曆在手機上不會跑版 */
+@media (max-width: 768px) {
+    .flatpickr-calendar {
+        width: 300px !important;
+        /* 強制縮小 */
+    }
+}
+
+/* --- 特殊節日標示 (淺紅色背景) --- */
+.holiday-flag {
+    background-color: #FFE3E3 !important;
+    /* 淺紅色背景 */
+    color: #D9534F !important;
+    /* 深紅色文字 */
+    font-weight: bold !important;
+    border: 1px solid #ffcccc !important;
+    /* 加個邊框更明顯 */
+}
+
+/* 當假日被選取時，要維持原本的深灰色選取狀態，不要被紅色蓋過去 */
+.flatpickr-day.selected.holiday-flag,
+.flatpickr-day.startRange.holiday-flag,
+.flatpickr-day.endRange.holiday-flag {
+    background: #4C585B !important;
+    color: #fff !important;
+    border-color: #4C585B !important;
+}
+
+#duration-display {
+    text-align: center;
+    color: #4C585B;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 15px;
+    display: none; /* JS 會控制顯示，這裡預設隱藏 */
+}
