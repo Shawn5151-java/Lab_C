@@ -134,3 +134,29 @@ submitBtn.addEventListener('click', function() {
         alert("正在為您搜尋 " + pickupDate + " 到 " + returnDate + " 的車輛...");
     }
 });
+
+// --- 優化：按鈕狀態控制 ---
+// 1. 一開始先禁用按鈕
+submitBtn.disabled = true;
+
+// 2. 定義一個檢查函式
+function checkFormValidity() {
+    const pickupDate = document.getElementById('pickup-date').value;
+    const returnDate = document.getElementById('return-date').value;
+    
+    // 如果兩個日期都有值，就啟用按鈕；否則禁用
+    if (pickupDate !== "" && returnDate !== "") {
+        submitBtn.disabled = false;
+    } else {
+        submitBtn.disabled = true;
+    }
+}
+
+// 3. 綁定監聽器 (當日期改變時，就檢查一次)
+// 注意：原本的 calculateDuration 裡面已經有監聽了，但我們這裡再加強保險
+document.getElementById('pickup-date').addEventListener('change', checkFormValidity);
+document.getElementById('return-date').addEventListener('change', checkFormValidity);
+
+// 4. (Flatpickr 的 onClose 已經會觸發 change，所以上面這樣寫通常就夠了)
+// 為了保險起見，我們修改一下原本的 calculateDuration 函式，在計算完天數後，順便呼叫 checkFormValidity()
+// (或者您直接把 checkFormValidity 的邏輯寫進 calculateDuration 也可以)

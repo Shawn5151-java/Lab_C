@@ -294,3 +294,14 @@
     margin-top: 15px;
     display: none; /* JS 會控制顯示，這裡預設隱藏 */
 }
+
+/* 新增在 Booking.css 最後面 */
+.submit-btn:disabled {
+    background-color: #ccc; /* 灰色背景 */
+    cursor: not-allowed;    /* 滑鼠變成禁止符號 */
+    transform: none;        /* 移除浮動效果 */
+}
+.submit-btn:disabled:hover {
+    background-color: #ccc; /* 滑鼠移過去不變色 */
+    color: white;
+}

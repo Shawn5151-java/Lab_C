@@ -5,7 +5,7 @@ showSlides(slideIndex);
 // 設定一個計時器，每 2000 毫秒 (2秒) 自動呼叫 plusSlides(1)
 let autoPlayTimer = setInterval(function() {
     plusSlides(1);
-}, 2000);
+}, 4000);
 
 // --- Next/previous controls (左右切換按鈕) ---
 function plusSlides(n) {
@@ -17,7 +17,7 @@ function plusSlides(n) {
   // 切換完後，重新啟動計時器
   autoPlayTimer = setInterval(function() {
       plusSlides(1);
-  }, 2000);
+  }, 4000);
 }
 
 // --- Thumbnail image controls (圓點切換) ---
@@ -30,7 +30,7 @@ function currentSlide(n) {
   // 重新啟動
   autoPlayTimer = setInterval(function() {
       plusSlides(1);
-  }, 2000);
+  }, 4000);
 }
 
 // --- 顯示圖片的核心邏輯 (這部分維持原本的樣子) ---

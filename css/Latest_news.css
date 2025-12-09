@@ -1,17 +1,29 @@
-/* --- 最新消息區塊 CSS --- */
+/* --- 最新消息區塊 CSS (淡黃色背景版) --- */
 
 .news-section {
     width: 90%;
     max-width: 1000px;
     margin: 100px auto 50px auto; /* 上方留 100px 避免被預約框蓋住 */
     font-family: "Microsoft JhengHei", sans-serif;
+    
+    /* --- 【新增】背景優化設定 --- */
+    background-color: rgb(126, 153, 163); /* 淡淡的淡黃色 (Warm White) */
+    padding: 40px;             /* 【關鍵】加了背景就要加內距，才不會太擠 */
+    border-radius: 20px;       /* 讓背景框變成圓角，比較柔和 */
+    box-sizing: border-box;    /* 確保寬度計算包含 padding */
+    /* ------------------------ */
 }
+
+/* ... (中間的 CSS 保持不變) ... */
 
 /* 標題樣式 */
 .section-title {
     font-size: 28px;
     color: #4C585B; /* 岩石灰 */
-    border-left: 5px solid #7E99A3; /* 左邊加一條莫蘭迪藍的線 */
+    
+    /* 【修改】左邊裝飾線改為新顏色 */
+    border-left: 5px solid rgb(165, 191, 204); 
+    
     padding-left: 15px;
     margin-bottom: 30px;
     display: flex;
@@ -34,33 +46,44 @@
 }
 
 /* 單則消息卡片 */
+/* 單則消息卡片 (增強陰影版) */
 .news-item {
     display: flex;
     align-items: center;
     background-color: white;
-    border: 1px solid #eee;
+    
+    /* 【修改 1】邊框稍微加深一點點 */
+    border: 1px solid #e0e0e0; 
+    
     padding: 20px;
     border-radius: 8px;
     transition: all 0.3s ease;
-    text-decoration: none; /* 去除超連結底線 */
+    text-decoration: none;
     color: inherit;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    
+    /* 【修改 2】加強預設陰影，讓它在白底上更立體 */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
 }
 
-/* 滑鼠移過去的效果 */
+/* 滑鼠移過去的效果 (懸浮感更明顯) */
 .news-item:hover {
-    transform: translateY(-3px); /* 微微浮起 */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    border-color: #7E99A3;
+    transform: translateY(-5px); /* 往上浮更多 */
+    
+    /* 【修改 3】加深懸浮時的陰影 */
+    box-shadow: 0 8px 20px rgba(165, 191, 204, 0.3); 
+    
+    border-color: rgb(165, 191, 204);
 }
-
 /* 左側日期方塊 */
 .news-date {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #4C585B; /* 岩石灰背景 */
+    
+    /* 【修改】預設背景改為新顏色 (淺藍) */
+    background-color: rgb(165, 191, 204); 
+    
     color: white;
     width: 80px;
     height: 80px;
@@ -70,8 +93,9 @@
     transition: background 0.3s;
 }
 
+/* 【修改】滑鼠移入時，日期方塊變回深色岩石灰 (做個反轉效果) */
 .news-item:hover .news-date {
-    background-color: #7E99A3; /* 滑鼠移過去變莫蘭迪藍 */
+    background-color: #4C585B; 
 }
 
 .news-date .day {
@@ -99,8 +123,9 @@
     transition: color 0.3s;
 }
 
+/* 【修改】滑鼠移入時，標題變為新顏色 */
 .news-item:hover .news-title {
-    color: #7E99A3; /* 標題變色 */
+    color: rgb(165, 191, 204); 
 }
 
 .news-desc {
@@ -125,7 +150,8 @@
 }
 
 .news-item:hover .news-arrow {
-    color: #4C585B;
+    /* 【修改】滑鼠移入時，箭頭變為新顏色 */
+    color: rgb(165, 191, 204);
     transform: translateX(5px); /* 往右移動 */
 }
 
@@ -135,6 +161,10 @@
         flex-direction: column; /* 改為垂直排列 */
         align-items: flex-start;
         padding: 15px;
+    }
+
+    .news-section {
+        padding: 20px;
     }
 
     .news-date {

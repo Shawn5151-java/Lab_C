@@ -1,15 +1,19 @@
+/* 修改 header.css */
 .header {
     background-color: rgb(76, 88, 91);
-    /* 您更新的岩石灰 */
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     padding: 10px 20px;
     box-sizing: border-box;
-    /* 確保下拉選單不會被其他層遮住，如果有 Banner 的話 */
-    position: relative;
-    z-index: 1000;
+    
+    /* --- 【新增】固定置頂設定 --- */
+    position: sticky; /* 讓它黏住 */
+    top: 0;           /* 黏在頂端 0 的位置 */
+    z-index: 2000;    /* 層級要夠高，才不會被輪播圖蓋住 */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* 加一點陰影，讓它跟內容有層次感 */
+    /* ------------------------ */
 }
 
 a {
