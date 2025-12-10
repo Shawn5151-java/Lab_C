@@ -1,55 +1,169 @@
-/* Three columns side by side */
-.column {
-    float: left;
-    width: 33.3%;
-    margin-bottom: 16px;
-    padding: 0 8px;
+/* --- Car_model.css (水平滑動版) --- */
+
+/* 1. 分類標題樣式 */
+.category-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4C585B;
+    margin: 30px 0 10px 5%;
+    /* 左邊留一點邊距對齊 */
+    padding-left: 10px;
+    border-left: 5px solid #7E99A3;
+    /* 加上裝飾線 */
 }
 
-/* Display the columns below each other instead of side by side on small screens */
-@media screen and (max-width: 650px) {
-    .column {
-        width: 100%;
-        display: block;
-    }
+/* 2. 滑動容器 (軌道) */
+.scroll-container {
+    display: flex;
+    /* 讓卡片排成一列 */
+    flex-wrap: nowrap;
+    /* 絕對不換行 */
+    overflow-x: auto;
+    /* 超過寬度時顯示橫向卷軸 */
+    gap: 20px;
+    /* 卡片之間的間距 */
+    padding: 20px 5%;
+    /* 上下留白 */
+
+    /* 優化滑動體驗 */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    /* 【修改】移除 hidden，改為 auto 或 thin，讓 Firefox 顯示細捲軸 */
+    scrollbar-width: thin;
+    scrollbar-color: #7E99A3 #f1f1f1;
+    /* 捲軸顏色 (拉桿 / 軌道) */
+
+    /* 增加底部內距，避免捲軸擋到陰影或內容 */
+    padding-bottom: 20px;
 }
 
-/* Add some shadows to create a card effect */
+/* --- 【新增】自訂 Chrome/Safari/Edge 的捲軸樣式 --- */
+
+/* 捲軸整體寬度/高度 */
+.scroll-container::-webkit-scrollbar {
+    height: 10px;
+    /* 設定橫向捲軸的高度 */
+}
+
+/* 捲軸軌道 (背景) */
+.scroll-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+    margin: 0 5%;
+    /* 左右留白，跟內容對齊 */
+}
+
+/* 捲軸拉桿 (可以拖曳的部分) */
+.scroll-container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    /* 預設灰色 */
+    border-radius: 10px;
+}
+
+/* 滑鼠移到拉桿上變色 */
+.scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #7E99A3;
+    /* 改成您的品牌莫蘭迪藍 */
+    cursor: pointer;
+}
+
+/* 3. 卡片設定 (固定寬度) */
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* 【關鍵】設定固定寬度，不會因為螢幕變小就被擠扁 */
+    flex: 0 0 300px;
+    /* 寬度固定 300px */
+
+    scroll-snap-align: start;
+    /* 滑動停止時，卡片會自動對齊左邊 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: white;
+    border: 1px solid #eee;
+    transition: 0.3s;
 }
 
-/* Some left and right padding inside the container */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* 4. 卡片內容容器 */
 .container {
-    padding: 0 16px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
-/* Clear floats */
-.container::after,
-.row::after {
-    content: "";
-    clear: both;
-    display: table;
+.container h2 {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+    color: #333;
+    white-space: nowrap;
+    /* 標題太長不換行 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* 變吊鐘點... */
 }
 
-.title {
-    font-size: x-large;
-    font-style: initial;
+/* 5. 價格與資訊排版 (Flexbox) */
+.price-row {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 5px;
+}
+
+.price-row .title {
+    font-size: 22px;
+    font-weight: bold;
     color: rgb(241, 6, 6);
+    margin-right: 5px;
 }
 
+.price-row .unit {
+    font-size: 14px;
+    color: #666;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #555;
+}
+
+.info-row img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+}
+
+/* 6. 按鈕 */
 .button {
     border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
+    padding: 10px;
     color: white;
-    background-color: #000;
+    background-color: #4C585B;
+    /* 改用您的岩石灰 */
     text-align: center;
     cursor: pointer;
     width: 100%;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .button:hover {
-    background-color: #555;
+    background-color: #7E99A3;
+    /* 改用莫蘭迪藍 */
 }

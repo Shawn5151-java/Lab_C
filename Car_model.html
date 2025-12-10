@@ -34,9 +34,12 @@
                     <li>
                         <a href="./Car_model.html">車款介紹 ▼</a>
                         <ul>
-                            <li><a href="#">一般車型</a></li>
-                            <li><a href="#">尊榮車型</a></li>
-                            <li><a href="#">商用車型</a></li>
+                            <ul>
+                                <li><a href="#normal-car">一般車型</a></li>
+                                <li><a href="#premium-car">尊榮車型</a></li>
+                                <li><a href="#suv-car">休旅車型</a></li>
+                                <li><a href="#ev-car">電動車型</a></li>
+                            </ul>
                         </ul>
                     </li>
                     <li><a href="./FAQ.html">常見問題</a></li>
@@ -61,43 +64,154 @@
 
 
 
-    <div class="row">
-        <div class="column">
-            <div class="card">
-                <img src="car img/altis/1717641892766577_1400_1200.jpg" alt="Jane" style="width:100%">
-                <div class="container">
-                    <h2>Toyota Altis</h2>
-                    <span class="title">NT$2,000</span>/日
-                    <p>排氣量</p>
-                    <p>人數</p>
-                    <p><button class="button">Contact</button></p>
+    <h3 class="category-title" id="normal-car">一般車型 Economy</h3>
+    <div class="scroll-container">
+        <div class="card">
+            <img src="car img/altis/1717641892766577_1400_1200.jpg" alt="Altis">
+            <div class="container">
+                <h2>Toyota Altis</h2>
+                <div class="price-row">
+                    <span class="title">NT$2,000</span><span class="unit">/ 日</span>
                 </div>
+                <div class="info-row">
+                    <img src="./icon/user.svg"><span>4人</span>
+                </div>
+                <div class="info-row">
+                    <img src="./icon/handbag.svg"><span>1大+2小</span>
+                </div>
+                <button class="button">我要預約</button>
             </div>
         </div>
 
-        <div class="column">
-            <div class="card">
-                <img src="./car img/focus/1677662116558940_1400_1200.jpg" alt="Mike" style="width:100%">
-                <div class="container">
-                    <h2>Ford Focus Wagon</h2>
-                    <span class="title">NT$2,200</span>/日
-                    <p>排氣量</p>
-                    <p>人數</p>
-                    <p><button class="button">Contact</button></p>
+        <div class="card">
+            <img src="./car img/vios/1522288071292520_1400_1200.jpg" alt="Vios">
+            <div class="container">
+                <h2>Toyota Vios</h2>
+                <div class="price-row">
+                    <span class="title">NT$1,600</span><span class="unit">/ 日</span>
                 </div>
+                <div class="info-row">
+                    <img src="./icon/user.svg"><span>4人</span>
+                </div>
+                <div class="info-row">
+                    <img src="./icon/handbag.svg"><span>2小</span>
+                </div>
+                <button class="button">我要預約</button>
             </div>
         </div>
 
-        <div class="column">
-            <div class="card">
-                <img src="./car img/mazda 3/1652688412760334_1400_1200.jpg" alt="John" style="width:100%">
-                <div class="container">
-                    <h2>Mazda 3 5D</h2>
-                    <span class="title">NT$2,200</span>/ 日
-                    <p>排氣量</p>
-                    <p>人數</p>
-                    <p><button class="button">Contact</button></p>
+        <div class="card">
+            <img src="./car img/yaris/1628669439967903_1400_1200.jpg" alt="Yaris">
+            <div class="container">
+                <h2>Toyota Yaris</h2>
+                <div class="price-row">
+                    <span class="title">NT$1,650</span><span class="unit">/ 日</span>
                 </div>
+                <div class="info-row">
+                    <img src="./icon/user.svg"><span>4人</span>
+                </div>
+                <div class="info-row">
+                    <img src="./icon/handbag.svg"><span>2小</span>
+                </div>
+                <button class="button">我要預約</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="./car img/focus/1677662116558940_1400_1200.jpg" alt="Focus">
+            <div class="container">
+                <h2>Ford Focus Wagon</h2>
+                <div class="price-row">
+                    <span class="title">NT$2,200</span><span class="unit">/ 日</span>
+                </div>
+                <div class="info-row">
+                    <img src="./icon/user.svg"><span>5人</span>
+                </div>
+                <div class="info-row">
+                    <img src="./icon/handbag.svg"><span>1大+2小</span>
+                </div>
+                <button class="button">我要預約</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="./car img/mazda 3/1652688412760334_1400_1200.jpg" alt="Mazda">
+            <div class="container">
+                <h2>Mazda 3 5D</h2>
+                <div class="price-row">
+                    <span class="title">NT$2,200</span><span class="unit">/ 日</span>
+                </div>
+                <div class="info-row">
+                    <img src="./icon/user.svg"><span>5人</span>
+                </div>
+                <div class="info-row">
+                    <img src="./icon/handbag.svg"><span>2大+2小</span>
+                </div>
+                <button class="button">我要預約</button>
+            </div>
+        </div>
+
+    </div>
+
+
+    <h3 class="category-title" id="premium-car">尊榮車型 Premium</h3>
+    <div class="scroll-container">
+        <div class="card">
+            <img src="https://fakeimg.pl/300x200/?text=Benz" alt="Benz">
+            <div class="container">
+                <h2>Mercedes-Benz C-Class</h2>
+                <div class="price-row">
+                    <span class="title">NT$4,500</span><span class="unit">/ 日</span>
+                </div>
+                <div class="info-row">
+                    <img src="./icon/user.svg"><span>5人</span>
+                </div>
+                <div class="info-row">
+                    <img src="./icon/handbag.svg"><span>2大+2小</span>
+                </div>
+                <button class="button">我要預約</button>
+            </div>
+        </div>
+    </div>
+
+
+    <h3 class="category-title" id="suv-car">休旅車型 SUV</h3>
+    <div class="scroll-container">
+        <div class="card">
+            <img src="https://fakeimg.pl/300x200/?text=CRV" alt="CRV">
+            <div class="container">
+                <h2>Honda CR-V</h2>
+                <div class="price-row">
+                    <span class="title">NT$3,000</span><span class="unit">/ 日</span>
+                </div>
+                <div class="info-row">
+                    <img src="./icon/user.svg"><span>5人</span>
+                </div>
+                <div class="info-row">
+                    <img src="./icon/handbag.svg"><span>3大+2小</span>
+                </div>
+                <button class="button">我要預約</button>
+            </div>
+        </div>
+    </div>
+
+
+    <h3 class="category-title" id="ev-car">電動車型 EV</h3>
+    <div class="scroll-container">
+        <div class="card">
+            <img src="https://fakeimg.pl/300x200/?text=Tesla" alt="Tesla">
+            <div class="container">
+                <h2>Tesla Model Y</h2>
+                <div class="price-row">
+                    <span class="title">NT$3,800</span><span class="unit">/ 日</span>
+                </div>
+                <div class="info-row">
+                    <img src="./icon/user.svg"><span>5人</span>
+                </div>
+                <div class="info-row">
+                    <img src="./icon/handbag.svg"><span>前1+後3</span>
+                </div>
+                <button class="button">我要預約</button>
             </div>
         </div>
     </div>
