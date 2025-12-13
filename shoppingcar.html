@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飛瑞租車</title>
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/Footer.css">
+    <link rel="stylesheet" href="./css/Login.css">
+    <link rel="icon" type="image/png" href="./img/newLOGO.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: "Microsoft JhengHei", Arial, sans-serif;
+        }
+
+        /* Container holding the image and the text */
+        .container {
+            position: relative;
+        }
+
+        /* Bottom right text */
+        .text-block {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(0, 0,  0, 50%);
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div>
+            <a href="./test_1.html">
+                <img class="logo-img" src="./img/newLOGO.jpg" alt="logo">
+            </a>
+        </div>
+
+        <div>
+            <nav>
+                <ul class="drop-down-menu">
+                    <li><a href="#">最新消息</a></li>
+                    <li>
+                        <a href="./Car_model.html">車款介紹 ▼</a>
+                        <ul>
+                            <li><a href="./Car_model.html#all">所有車款</a></li>
+                            <li><a href="./Car_model.html#sec-normal">一般車型</a></li>
+                            <li><a href="./Car_model.html#sec-premium">尊榮車型</a></li>
+                            <li><a href="./Car_model.html#sec-suv">休旅車型</a></li>
+                            <li><a href="./Car_model.html#sec-ev">電動車型</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="./FAQ.html">常見問題</a></li>
+                    <li><a href="./Brand_story.html">品牌故事</a></li>
+                    <li><a href="./Contact_us.html">聯絡我們</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div style="display: flex; gap: 10px;">
+            <button onclick="document.getElementById('id02').style.display='block'">
+                <img src="/img/login2.png" alt="註冊icon">
+                <span>會員註冊</span>
+            </button>
+            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
+                <img src="/img/person2.png" alt="登入icon">
+                <span>會員登入</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="container">
+        <img src="./img/Adobe Express - file.jpg" style="object-fit: cover; display: block; width:100%; height: 400px; ">
+        <div class="text-block">
+            <h4>快速預約</h4>
+        </div>
+    </div>
+
+
+
+
+
+
+    <footer class="site-footer">
+        <div class="footer-container">
+
+            <div class="footer-column">
+                <h3 class="footer-logo">飛瑞租車 <span style="font-size: 14px; font-weight: normal;">Fei Rui Car
+                        Rental</span></h3>
+                <p class="footer-desc">
+                    致力於提供最尊榮、舒適的駕駛體驗。<br>
+                    無論是商務出行還是家庭旅遊，<br>
+                    飛瑞租車都是您最值得信賴的夥伴。
+                </p>
+            </div>
+
+
+            <div class="footer-column">
+                <h4>快速連結</h4>
+                <ul class="footer-links">
+                    <li><a href="#">最新消息</a></li>
+                    <li><a href="./Car_model.html">車款介紹</a></li>
+                    <li><a href="#">常見問題</a></li>
+                    <li><a href="./Brand_story.html">品牌故事</a></li>
+                    <li><a href="./Contact_us.html">聯絡我們</a></li>
+                    <li><a href="./test_2.html">隱私權政策</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>聯絡我們</h4>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fa-solid fa-location-dot icon"></i>
+                        <span>台中市南屯區公益路二段 (旗艦店)</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone icon"></i>
+                        <span>0988-123-456</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-clock icon"></i>
+                        <span>週一至週日 09:00 - 21:00</span>
+                    </li>
+                </ul>
+
+                <div class="social-buttons">
+                    <a href="javascript:void(0)" class="social-btn" onclick="demoAlert('LINE')">
+                        <i class="fa-brands fa-line"></i>
+                    </a>
+                    <a href="javascript:void(0)" class="social-btn" onclick="demoAlert('Facebook')">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="javascript:void(0)" class="social-btn" onclick="demoAlert('Instagram')">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright-bar">
+            &copy; 2025 飛瑞租車 Fei Rui Car Rental. All Rights Reserved. <br>
+            (本網站為學術練習作品，無商業用途)
+        </div>
+    </footer>
+
+    <div id="id01" class="modal">
+        <form class="modal-content animate" action="/action_page.php" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close"
+                    title="關閉視窗">&times;</span>
+                <img src="./img/person2.png" alt="Avatar" class="avatar" style="width: 50px; height: 50px;">
+                <h2 style="color: #4C585B; margin: 10px 0;">會員登入</h2>
+            </div>
+
+            <div class="container">
+                <label for="email_login"><b>帳號 / 電子郵件</b></label>
+                <input type="text" placeholder="請輸入帳號" name="uname" required class="login-input">
+
+                <label for="psw_login"><b>密碼</b></label>
+                <input type="password" placeholder="請輸入密碼" name="psw" required class="login-input">
+
+                <button type="submit" class="login-btn">登入</button>
+
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> 記住我
+                </label>
+            </div>
+
+            <div class="container"
+                style="background-color:#f1f1f1; border-radius: 0 0 10px 10px; display: flex; justify-content: space-between; align-items: center;">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'"
+                    class="cancelbtn">取消</button>
+                <span><a href="#" style="color: #7E99A3; text-decoration: none;">忘記密碼?</a></span>
+            </div>
+        </form>
+    </div>
+
+    <div id="id02" class="modal">
+        <form class="modal-content animate" action="/action_page.php">
+            <div class="container">
+                <div class="imgcontainer" style="margin: 10px 0 20px 0;">
+                    <span onclick="document.getElementById('id02').style.display='none'" class="close"
+                        title="關閉視窗">&times;</span>
+                    <h2 style="color: #4C585B; margin-bottom: 5px;">註冊新會員</h2>
+                    <p style="color: #666; font-size: 14px;">請填寫以下資訊以建立帳號</p>
+                </div>
+
+                <hr style="border: 1px solid #eee; margin-bottom: 20px;">
+
+                <label for="email_signup"><b>電子郵件</b></label>
+                <input type="text" placeholder="請輸入 Email" name="email" required class="login-input">
+
+                <label for="psw_signup"><b>設定密碼</b></label>
+                <input type="password" placeholder="請輸入密碼" name="psw" required class="login-input">
+
+                <label for="psw-repeat"><b>確認密碼</b></label>
+                <input type="password" placeholder="請再次輸入密碼" name="psw-repeat" required class="login-input">
+
+                <label>
+                    <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> 記住我
+                </label>
+
+                <p style="font-size: 13px; color: #666;">
+                    建立帳號即代表您同意我們的 <a href="./test_2.html" style="color: #7E99A3;">隱私權政策與條款</a>
+                </p>
+
+                <div class="clearfix" style="display: flex; gap: 10px; margin-top: 20px;">
+                    <button type="button" onclick="document.getElementById('id02').style.display='none'"
+                        class="cancelbtn" style="flex:1;">取消</button>
+                    <button type="submit" class="signupbtn" style="flex:1;">註冊</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Footer 的按鈕功能
+        function demoAlert(platform) {
+            alert("您點擊了 " + platform + "！\n(這是作業用網站，並無實際連結)");
+        }
+
+        // Modal 視窗控制 (登入 & 註冊)
+        var loginModal = document.getElementById('id01');
+        var signupModal = document.getElementById('id02');
+
+        // 當使用者點擊視窗的任何地方
+        window.onclick = function (event) {
+            // 如果點到的是登入視窗的背景 -> 關閉登入
+            if (event.target == loginModal) {
+                loginModal.style.display = "none";
+            }
+            // 如果點到的是註冊視窗的背景 -> 關閉註冊
+            if (event.target == signupModal) {
+                signupModal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
