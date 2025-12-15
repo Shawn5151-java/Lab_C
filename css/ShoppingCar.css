@@ -1,0 +1,384 @@
+.step-section {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+/* 2. 用來顯示當前步驟的 class */
+.active {
+    display: block;
+}
+
+.booking-grid {
+    display: flex;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    align-items: flex-start;
+}
+
+.booking-main {
+    flex: 2;
+}
+
+.booking-sidebar {
+    flex: 1;
+    position: sticky;
+    top: 100px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- ShoppingCar.css --- */
+
+/* 加購卡片本體 */
+.add-on {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    /* 陰影柔和一點 */
+    margin: 5px;
+    padding: 15px;
+    /* 內距大一點 */
+    border-radius: 16px;
+    /* 圓角 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 160px;
+    /* 寬度固定 */
+    background: #fff;
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+    /* 平滑過渡效果 */
+}
+
+.add-on:hover {
+    /* 【修改】滑鼠移入效果：浮起 + 陰影加深 + 邊框變色 */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    border-color: #7E99A3;
+    /* 邊框變成輔助色 */
+}
+
+/* 卡片圖片 */
+.add-on img {
+    width: 100%;
+    /* 佔滿卡片寬度 */
+    height: 100px;
+    /* 固定高度 */
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 12px;
+}
+
+/* 卡片標題 */
+.add-on p:nth-child(2) {
+    /* 抓到第二個 p 標籤 (兒童安全座椅) */
+    font-size: 16px;
+    color: #333;
+    margin: 5px 0;
+}
+
+/* 卡片價格 */
+.add-on p:nth-child(3) {
+    /* 抓到第三個 p 標籤 ($150/日) */
+    font-size: 18px;
+    color: #b12b2b;
+    /* 價格用紅色凸顯 */
+    margin-bottom: 15px;
+}
+
+.add-on p {
+    width: 100%;
+    word-wrap: break-word;
+    font-weight: bolder;
+}
+
+
+.add-on button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    bottom: 0;
+    border-radius: 5px;
+}
+
+.add-on button:hover {
+    opacity: 0.7;
+    color: #000000;
+    background-color: #8dcee6;
+    font-style: inherit;
+}
+
+/* --- 步驟 1 車輛卡片樣式 --- */
+.car-summary-card {
+    display: flex;
+    /* 讓圖和文並排 */
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #eee;
+}
+
+.car-img-box {
+    flex: 2;
+    /* 圖片佔 2/5 寬度 */
+    min-height: 250px;
+}
+
+.car-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 填滿不變形 */
+}
+
+.car-info-box {
+    flex: 3;
+    /* 資訊佔 3/5 寬度 */
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.price-tag {
+    font-size: 24px;
+    font-weight: bold;
+    color: #b12b2b;
+    margin: 0;
+}
+
+/* --- ShoppingCar.css --- */
+
+/* 上一步/下一步按鈕通用樣式 */
+.next-btn,
+.prev-btn {
+    /* ...原本的樣式 (padding, border-radius, font-size)... */
+    padding: 12px 24px;
+    /* 讓按鈕稍微大一點，更好點擊 */
+    border-radius: 8px;
+    /* 圓角大一點更現代 */
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    transition: background-color 0.3s, transform 0.1s;
+    /* 增加一點動態感 */
+    font-weight: bold;
+}
+
+/* 下一步按鈕 (主要按鈕色) */
+.next-btn {
+    background-color: #4C585B;
+    /* 主色調：深灰 */
+    color: white;
+}
+
+.next-btn:hover {
+    background-color: #3a4447;
+    /* hover 時變深一點 */
+    transform: translateY(-2px);
+    /* 輕微上浮效果 */
+}
+
+/* 上一步按鈕 (次要按鈕色) */
+.prev-btn {
+    background-color: #e0e0e0;
+    /* 淺灰色 */
+    color: #333;
+}
+
+.prev-btn:hover {
+    background-color: #d0d0d0;
+    /* hover 時變深一點 */
+    transform: translateY(-2px);
+}
+
+/* 加購卡片裡的按鈕 */
+.add-on button {
+    /* ...原本的樣式 (border, padding, width)... */
+    border: none;
+    outline: 0;
+    padding: 12px;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    bottom: 0;
+    border-radius: 5px;
+    /* 【修改】預設顏色改成你的輔助色 (淺藍灰) */
+    background-color: #7E99A3;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.add-on button:hover {
+    /* 【修改】hover 時變成主色調 (深灰) */
+    background-color: #4C585B;
+    opacity: 1;
+    /* 移除原本的 opacity: 0.7 */
+    color: white;
+}
+
+/* --- 步驟 3 填寫資料樣式 --- */
+
+/* 會員登入提示 */
+.login-hint {
+    background-color: #eef5f9;
+    /* 淺藍色背景 */
+    border: 1px solid #cce4f0;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #4C585B;
+}
+
+.login-link-btn {
+    background: none;
+    border: none;
+    color: #7E99A3;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+}
+
+/* 表單欄位 */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    /* 讓 label 獨佔一行 */
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    /* 寬度佔滿 */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    /* 確保 padding 不會撐大寬度 */
+    font-size: 16px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #7E99A3;
+    /* 聚焦時變色 */
+    outline: none;
+}
+
+/* 驗證失敗：紅框與紅字 */
+input.invalid {
+    border-color: #d93025 !important;
+    background-color: #fff8f8;
+}
+
+.error-text {
+    color: #d93025;
+}
+
+/* 驗證成功：綠框與綠字 (看起來正確時顯示) */
+input.valid {
+    border-color: #28a745 !important;
+    background-color: #f8fff8;
+}
+
+.success-text {
+    color: #28a745;
+}
+
+/* --- ShoppingCar.css --- */
+
+/* 右側邊欄的「確認預約」按鈕 */
+.booking-sidebar button[onclick="finish()"] {
+    /* 繼承前面設定的 .next-btn 樣式 */
+    padding: 15px !important;
+    /* 更大一點 */
+    font-size: 18px !important;
+    background-color: #b12b2b !important;
+    /* 改成顯眼的紅色，代表「最後一步」 */
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.booking-sidebar button[onclick="finish()"]:hover {
+    background-color: #9e2424 !important;
+    /* hover 時變深紅 */
+}
+
+/* 側邊欄的價格標題 */
+.summary-card h3[style*="color: #b12b2b"] {
+    font-size: 28px;
+    /* 字體加大 */
+    margin: 20px 0;
+    /* 上下留白 */
+}
+
+/* --- ShoppingCar.css 最後面加入 --- */
+
+/* 當加購項目被選取時的樣式 */
+.add-on.selected {
+    background-color: #f0f7fa;
+    /* 變成淺藍色底 */
+    border: 2px solid #7E99A3;
+    /* 加上藍色邊框 */
+}
+
+/* 被選取時，裡面的按鈕樣式也要跟著變 */
+.add-on.selected button {
+    background-color: #4C585B;
+    /* 按鈕變深色 */
+    color: white;
+}
+
+/* --- 加在 ShoppingCar.css 的最後面 --- */
+
+/* 手機版響應式設計 (RWD) */
+@media (max-width: 768px) {
+    .booking-grid {
+        flex-direction: column;
+        /* 改成垂直排列 (上下) */
+        padding: 10px;
+    }
+
+    .booking-main {
+        width: 100%;
+        /* 佔滿寬度 */
+    }
+
+    .booking-sidebar {
+        width: 100%;
+        /* 側邊欄也佔滿寬度 */
+        position: static;
+        /* 手機版不需要 sticky (會擋路)，改成一般定位 */
+        margin-top: 20px;
+        box-sizing: border-box;
+        /* 確保 padding 不會撐破寬度 */
+    }
+
+    /* 調整加購卡片在手機上的排列，讓它們可以滑動或換行 */
+    .add-on-container {
+        flex-wrap: wrap;
+        /* 空間不夠就換行 */
+        justify-content: center;
+        /* 置中 */
+    }
+}
