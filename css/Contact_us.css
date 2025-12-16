@@ -1,0 +1,228 @@
+/* =========================================
+   1. 基礎設定
+   ========================================= */
+body {
+    margin: 0;
+    font-family: "Microsoft JhengHei", Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+h2, p { margin: 0; }
+
+/* =========================================
+   2. Intro Section (Upgrade Your Journey)
+   ========================================= */
+.pacifico-regular {
+    background-color: #fff; /* 白色底 */
+    padding: 100px 20px;    /* 【關鍵】加大上下間距，創造呼吸感 */
+    text-align: center;
+}
+
+.pacifico-regular h2 {
+    font-family: "Great Vibes", cursive;
+    font-size: 4rem;
+    color: #4C585B;
+    margin-bottom: 30px;
+}
+
+.pacifico-regular p {
+    font-family: "Microsoft JhengHei", serif;
+    font-size: 1.2rem;
+    line-height: 2;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;       /* 讓文字區塊置中 */
+    letter-spacing: 1.5px;
+    text-align: justify;
+}
+
+/* =========================================
+   3. Zig-Zag Section (圖文交錯 - 三明治配色)
+   ========================================= */
+.title-1 {
+    width: 100%;
+}
+
+.all-content {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch; /* 等高排列 */
+    justify-content: center;
+    width: 100%;
+    
+    /* 【關鍵】預設給淺灰色背景，區分 Intro 的白底 */
+    background-color: #f8f9fa; 
+}
+
+/* 中間那層改成白色，形成「灰-白-灰」的節奏 */
+.relative {
+    flex-direction: row-reverse;
+    background-color: #ffffff; 
+}
+
+.text-content {
+    flex: 1;
+    padding: 80px 60px; /* 文字區內距 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-content h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #7E99A3; /* 【關鍵】加上裝飾底線，增加視覺斷點 */
+    display: inline-block;
+    width: fit-content;
+    padding-bottom: 10px;
+}
+
+.text-content p {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #4C585B;
+    margin-bottom: 20px;
+}
+
+.text-content span {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.img-box {
+    flex: 1;
+    position: relative;
+    min-height: 400px; /* 確保沒圖片時也有高度 */
+}
+
+.img-content {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* =========================================
+   4. Brand Banner (探索飛瑞)
+   ========================================= */
+.brand-banner-section {
+    position: relative;
+    background-image: url('../img/will-truettner-wcT778-M1WE-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* 【選用】視差滾動效果，讓背景固定不動 */
+    padding: 120px 20px;
+    text-align: center;
+    color: white;
+}
+
+/* 黑色遮罩 (直接寫在 CSS 比較乾淨) */
+.brand-banner-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* 60% 黑色 */
+}
+
+.banner-content {
+    position: relative; /* 為了浮在遮罩上面 */
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.banner-content h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.banner-content p {
+    font-size: 1.2rem;
+    line-height: 2;
+    font-weight: 300;
+}
+
+/* =========================================
+   5. Values Section (卡片區)
+   ========================================= */
+.values-section {
+    /* 【關鍵】給一個跟上面不一樣的底色，讓白色卡片跳出來 */
+    background-color: #eef2f5; 
+    padding: 100px 20px; /* 上下留白 */
+}
+
+.card-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 100px auto;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 40px 30px;
+    width: 300px; /* 固定寬度 */
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* 輕柔的陰影 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* 您的極光漸層 */
+    background-image:
+        radial-gradient(circle at 100% 0%, #e0f0ff 0%, transparent 50%),
+        radial-gradient(circle at 0% 100%, #e0f0ff 0%, transparent 50%);
+}
+
+.card:hover {
+    transform: translateY(-10px); /* 浮起效果 */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* =========================================
+   6. RWD (手機版優化)
+   ========================================= */
+@media (max-width: 960px) {
+    /* 1. Intro */
+    .pacifico-regular { padding: 60px 20px; }
+    .pacifico-regular h2 { font-size: 3rem; }
+    
+    /* 2. Zig-Zag */
+    .all-content, .relative {
+        flex-direction: column; /* 垂直排列 */
+    }
+    .text-content { padding: 50px 30px; }
+    .img-box { height: 300px; } /* 固定圖片高度 */
+    
+    /* 3. Banner */
+    .brand-banner-section { padding: 80px 20px; }
+    .banner-content h2 { font-size: 2rem; }
+    
+    /* 4. Cards */
+    .card { width: 100%; margin-bottom: 20px; }
+}

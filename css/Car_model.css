@@ -1,5 +1,3 @@
-/* --- Car_model.css (水平滑動版) --- */
-
 /* 1. 分類標題樣式 */
 .category-title {
     font-size: 24px;
@@ -37,8 +35,6 @@
     /* 增加底部內距，避免捲軸擋到陰影或內容 */
     padding-bottom: 20px;
 }
-
-/* --- 【新增】自訂 Chrome/Safari/Edge 的捲軸樣式 --- */
 
 /* 捲軸整體寬度/高度 */
 .scroll-container::-webkit-scrollbar {
