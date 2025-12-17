@@ -8,26 +8,18 @@
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/Footer.css">
     <link rel="stylesheet" href="./css/Login.css">
-    <link rel="stylesheet" href="./css/ShoppingCar.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="https://npmcdn.com/flatpickr/dist/l10n/zh-tw.js"></script>
     <link rel="icon" type="image/png" href="./img/newLOGO.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./css/Promotion_detail.css">
     <style>
         body {
             margin: 0;
             font-family: "Microsoft JhengHei", Arial, sans-serif;
         }
-
-        /* Container holding the image and the text */
-        .container {
-            position: relative;
-        }
     </style>
 </head>
 
-<body>
+<div>
     <div class="header">
         <div>
             <a href="./test_1.html">
@@ -40,14 +32,14 @@
                 <ul class="drop-down-menu">
                     <li><a href="./Promotions.html">優惠活動</a></li>
                     <li>
-                    <li><a href="./Promotions.html">最新消息</a></li>
-                    <ul>
-                        <li><a href="./Car_model.html#all">所有車款</a></li>
-                        <li><a href="./Car_model.html#sec-normal">一般車型</a></li>
-                        <li><a href="./Car_model.html#sec-premium">尊榮車型</a></li>
-                        <li><a href="./Car_model.html#sec-suv">休旅車型</a></li>
-                        <li><a href="./Car_model.html#sec-ev">電動車型</a></li>
-                    </ul>
+                        <a href="./Car_model.html">車款介紹 ▼</a>
+                        <ul>
+                            <li><a href="./Car_model.html#all">所有車款</a></li>
+                            <li><a href="./Car_model.html#sec-normal">一般車型</a></li>
+                            <li><a href="./Car_model.html#sec-premium">尊榮車型</a></li>
+                            <li><a href="./Car_model.html#sec-suv">休旅車型</a></li>
+                            <li><a href="./Car_model.html#sec-ev">電動車型</a></li>
+                        </ul>
                     </li>
                     <li><a href="./FAQ.html">常見問題</a></li>
                     <li><a href="./Brand_story.html">品牌故事</a></li>
@@ -68,144 +60,40 @@
         </div>
     </div>
 
-    <div class="container">
-        <img src="./img/1122233.png" style="object-fit: cover; display: flex; width:100%; height: auto; ">
-    </div>
 
-    <div class="booking-grid">
+    <div class="article-container">
 
-        <div class="booking-main">
-
-            <div id="step1" class="step-section active">
-                <h3>1. 確認預約車輛與時間</h3>
-                <div class="car-summary-card">
-                    <div class="car-img-box">
-                        <img id="selected-car-img" src="./car_img/altis/1717641892766577_1400_1200.jpg"
-                            alt="Selected Car">
-                    </div>
-                    <div class="car-info-box">
-                        <h2 id="selected-car-name" style="margin: 0 0 10px 0; color: #4C585B;">Toyota Altis</h2>
-
-                        <p id="selected-car-price-text" class="price-tag">NT$ 2,000 / 日</p>
-
-                        <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
-                        <div class="form-group date-group" style="margin-bottom: 15px;">
-                            <label style="display: block; margin-bottom: 5px; font-weight: bold;">取還車時間</label>
-                            <div class="datetime-wrapper" style="display: flex; gap: 10px;">
-                                <input type="text" class="date-input" id="pickup-date" placeholder="請選擇取車日期"
-                                    style="flex:1; padding: 8px;">
-                                <input type="text" class="date-input" id="return-date" placeholder="請選擇還車日期"
-                                    style="flex:1; padding: 8px;">
-                            </div>
-                            <p style="font-size: 14px; color: #666; margin-top: 5px;">*請選擇日期以計算總金額</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="text-align: right; margin-top: 20px;">
-                    <button onclick="nextStep(2)" class="next-btn">下一步：選擇加購項目 ➔</button>
-                </div>
-            </div>
-
-
-            <div id="step2" class="step-section">
-                <h3>2. 選擇加購項目</h3>
-                <div class="add-on-container" style="display: flex; gap: 20px;">
-                    <div class="add-on" data-price="150" data-mode="once">
-                        <img src="./img/original.jpg" alt="嬰兒車">
-                        <p>兒童安全座椅</p>
-                        <p>$150 / 次</p>
-                        <p><button onclick="toggleAddOn(this)">加購</button></p>
-                    </div>
-
-                    <div class="add-on" data-price="400" data-mode="daily">
-                        <img src="./img/Gemini_Generated_Image_2yicql2yicql2yic.png" alt="保險圖示">
-                        <p>超安心全險</p>
-                        <p>$400 / 日</p>
-                        <p><button onclick="toggleAddOn(this)">加購</button></p>
-                    </div>
-
-                    <div class="add-on" data-price="200" data-mode="once">
-                        <img src="./img/2024_12_06_1844171.jpeg" alt="行車紀錄器">
-                        <p>行車紀錄器</p>
-                        <p>$200 / 次</p>
-                        <p><button onclick="toggleAddOn(this)">加購</button></p>
-                    </div>
-                </div>
-
-                <div style="display: flex; justify-content: space-between; margin-top: 20px;">
-                    <button onclick="nextStep(1)" class="prev-btn">🠔 上一步</button>
-                    <button onclick="nextStep(3)" class="next-btn">下一步：填寫資料 ➔</button>
-                </div>
-            </div>
-
-            <div id="step3" class="step-section">
-                <h3>3. 填寫駕駛人資訊</h3>
-                <div class="login-hint">
-                    <span>(i) 已經是會員嗎？</span>
-                    <button onclick="document.getElementById('id01').style.display='block'" class="login-link-btn">
-                        [點此登入] 自動帶入資料
-                    </button>
-                </div>
-
-                <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-
-                <div class="form-container">
-                    <div class="form-group">
-                        <label for="driver-name">駕駛人姓名 <span style="color:red;">*</span>：</label>
-                        <input type="text" id="driver-name" placeholder="請輸入真實姓名" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="driver-ID">身分證字號<span style="color:red;">*</span>：</label>
-                        <input type="text" id="driver-ID" placeholder="請輸入身分證字號" maxlength="10"
-                            onblur="validate_simple_ID()">
-                        <small id="id-msg-area" style="display: none; margin-top: 5px;"></small>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="driver-phone">聯絡電話 <span style="color:red;">*</span>：</label>
-                        <input type="tel" id="driver-phone" placeholder="請輸入手機號碼" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="driver-birthday">出生年月日<span style="color:red;">*</span>：</label>
-                        <input type="date" id="driver-birthday">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="driver-email">電子信箱 <span style="color:red;">*</span>：</label>
-                        <input type="email" id="driver-email" placeholder="用於接收訂單資訊" required>
-                    </div>
-                </div>
-
-                <div style="text-align: left; margin-top: 20px;">
-                    <button onclick="nextStep(2)" class="prev-btn">🠔 上一步</button>
-                </div>
-            </div>
+        <div class="article-header">
+            <span class="article-tag">優惠活動</span>
+            <span class="article-date">2025.01.01 發佈</span>
+            <h1 class="article-title">新會員首租 7 折！開啟您的第一次完美旅程</h1>
         </div>
 
+        <div class="article-content">
+            <p class="lead">歡迎加入飛瑞租車的大家庭！為了慶祝您成為我們的一員，我們特別準備了專屬的見面禮。無論是週末的輕旅行，還是計畫已久的長途冒險，現在就是出發的最佳時機。</p>
 
+            <img src="./img/promotion1.jpg" class="article-img" alt="新會員優惠">
 
-        <div class="booking-sidebar">
-            <div class="summary-card">
-                <h3>訂單摘要</h3>
-                <p>車款：<span id="summary-car-name">請選擇車輛</span></p>
-                <p>天數：<span id="summary-days">0</span> 天</p>
-                <h3 style="color: #b12b2b;">
-                    總計：NT$ <span id="summary-total">0</span>
-                </h3>
-                <button onclick="finish()"
-                    style="width:100%; padding:10px; background:#4C585B; color:white; border:none;">
-                    確認預約
-                </button>
-            </div>
+            <h3>為什麼選擇飛瑞租車？</h3>
+            <p>我們深知，每一次的租車體驗都承載著對旅途的期待。因此，飛瑞堅持提供車齡 3 年內的優質新車，並在交車前執行嚴格的 18 項安全檢測與醫療級清潔。對於新朋友，我們更希望以最實惠的價格，讓您體驗所謂的「尊榮服務」。
+            </p>
+
+            <h3>活動詳情與辦法</h3>
+            <ul>
+                <li><strong>適用對象：</strong> 首次註冊且未曾於飛瑞租車消費之新會員。</li>
+                <li><strong>優惠內容：</strong> 首次租車不限車款、不限平假日，結帳金額直接享 <strong>7 折</strong> 優惠。</li>
+                <li><strong>適用車型：</strong> 全車系適用（包含一般房車、休旅車及尊榮車款）。</li>
+                <li><strong>預約方式：</strong> 線上預約時，系統將自動偵測會員資格並帶入折扣。</li>
+            </ul>
+
+            <h3>注意事項</h3>
+            <p>1. 本優惠每位會員帳號限使用一次，不可轉讓。<br>
+                2. 需於預約時完成身分驗證（上傳駕照與身分證）。<br>
+                3. 農曆春節期間（2025/01/28 - 2025/02/02）不適用此優惠。<br>
+                4. 飛瑞租車保有活動最終解釋與修改之權利。</p>
         </div>
+        <a href="./Promotions.html" class="btn-back">← 返回列表</a>
     </div>
-
-
-
-
 
 
 
@@ -229,9 +117,9 @@
                 <ul class="footer-links">
                     <li><a href="#">最新消息</a></li>
                     <li><a href="./Car_model.html">車款介紹</a></li>
-                    <li><a href="#">常見問題</a></li>
+                    <li><a href="./FAQ.html">常見問題</a></li>
                     <li><a href="./Brand_story.html">品牌故事</a></li>
-                    <li><a href="./Contact_us.html">聯絡我們</a></li>
+                    <li><a href="#">聯絡我們</a></li>
                     <li><a href="./test_2.html">隱私權政策</a></li>
                 </ul>
             </div>
@@ -344,29 +232,27 @@
     </div>
 
     <script>
-
+        // Footer 的按鈕功能
         function demoAlert(platform) {
             alert("您點擊了 " + platform + "！\n(這是作業用網站，並無實際連結)");
         }
 
-
+        // Modal 視窗控制 (登入 & 註冊)
         var loginModal = document.getElementById('id01');
         var signupModal = document.getElementById('id02');
 
-
+        // 當使用者點擊視窗的任何地方
         window.onclick = function (event) {
-
+            // 如果點到的是登入視窗的背景 -> 關閉登入
             if (event.target == loginModal) {
                 loginModal.style.display = "none";
             }
-
+            // 如果點到的是註冊視窗的背景 -> 關閉註冊
             if (event.target == signupModal) {
                 signupModal.style.display = "none";
             }
         }
     </script>
-
-    <script src="./js/ShoppingCar.js"></script>
-</body>
+    </body>
 
 </html>

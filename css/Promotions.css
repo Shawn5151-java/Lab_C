@@ -1,0 +1,73 @@
+.card-promContent {
+    display: flex;
+    margin: 20px 0;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    flex: 1 1 45%;
+    min-width: 300px;
+    max-width: 600px;
+    border: 1px solid #eee;
+    margin: 10px;
+    border-radius: 15px;
+    text-decoration: none;
+    background: #fff;
+    overflow: hidden;
+    /* 確保圖片圓角不被切掉 */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.prom-card {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.card:hover {
+    box-shadow: 2px 3px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px)
+}
+
+.prom-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.prom-card h4 {
+    font-weight: 800;
+    font-size: 25px;
+}
+
+.prom-card p {
+    margin: 5px;
+    padding: 5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    box-sizing: border-box
+}
+
+.title-style-1 {
+    font-size: 1.8rem;
+    color: #333;
+    background: linear-gradient(90deg, #f4f8fb 0%, #ffffff 100%);
+    padding: 15px 20px;
+    border-left: 8px solid #7E99A3;
+    margin: 40px 0 20px 0;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 100%;
+        margin: 10px 0;
+    }
+}

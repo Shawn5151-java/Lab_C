@@ -1,0 +1,153 @@
+/* --- Hero 標題區 --- */
+.contact-hero {
+    position: relative;
+    /* 請換成一張適合的背景圖 (例如方向盤、或是客服人員在微笑) */
+    background-image: url('../img/seo-galaxy-GQ6bUqDNjZY-unsplash.jpg'); 
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+}
+
+.contact-hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.6);
+}
+
+.contact-hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-hero h2 { font-size: 3rem; margin-bottom: 20px; letter-spacing: 2px; }
+.contact-hero p { font-size: 1.2rem; font-weight: 300; }
+
+/* --- 主要容器 (Flexbox 排版) --- */
+.contact-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    gap: 50px; /* 左右欄位的間距 */
+}
+
+/* 左邊：資訊欄 */
+.contact-info-box {
+    flex: 1; /* 佔 1 份寬度 */
+    padding: 20px;
+}
+
+.contact-info-box h3, .contact-form-box h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    border-left: 5px solid #7E99A3; /* 品牌色線條 */
+    padding-left: 15px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center; /* 垂直置中 */
+    margin-bottom: 30px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.info-item:hover {
+    transform: translateX(10px); /* 滑鼠移上去稍微往右動 */
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.info-item i {
+    font-size: 2rem;
+    color: #7E99A3;
+    margin-right: 20px;
+    width: 40px; /* 固定寬度確保對齊 */
+    text-align: center;
+}
+
+.info-item h4 { margin: 0 0 5px 0; color: #333; font-size: 1.1rem; }
+.info-item p { margin: 0; color: #666; }
+
+/* 右邊：表單欄 */
+.contact-form-box {
+    flex: 1.5; /* 佔 1.5 份寬度 (表單寬一點比較好填) */
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* 漂亮的卡片陰影 */
+    border: 1px solid #eee;
+}
+
+.form-group { margin-bottom: 20px; }
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #4C585B;
+}
+
+/* 輸入框樣式美化 */
+.form-group input, 
+.form-group select, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    box-sizing: border-box; /* 確保 padding 不會撐爆寬度 */
+    transition: 0.3s;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: #7E99A3;
+    outline: none;
+    box-shadow: 0 0 5px rgba(126, 153, 163, 0.3);
+}
+
+/* 送出按鈕 */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #7E99A3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+    background-color: #4C585B; /* 變深色 */
+}
+
+/* 地圖區 */
+.map-section {
+    width: 100%;
+    margin-bottom: -5px; /* 消除 iframe 底部可能的白邊 */
+}
+
+/* 手機版 RWD */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column; /* 變成上下排列 */
+    }
+    
+    .contact-form-box {
+        padding: 20px;
+    }
+    
+    .contact-hero h2 { font-size: 2rem; }
+}

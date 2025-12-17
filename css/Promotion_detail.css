@@ -1,0 +1,99 @@
+.article-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 60px 50px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.article-header {
+    border-bottom: 1px solid #eee;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+.article-title {
+    font-size: 2.2rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.article-date {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.article-tag {
+    background-color: #7E99A3;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-right: 10px;
+}
+
+.article-content {
+    font-size: 1.1rem;
+    line-height: 2;
+    color: #555;
+    text-align: justify;
+}
+
+.article-content h3 {
+    color: #4C585B;
+    margin-top: 40px;
+    font-size: 1.4rem;
+    border-left: 5px solid #7E99A3;
+    padding-left: 15px;
+}
+
+.article-content p {
+    margin-bottom: 20px;
+}
+
+.article-content ul {
+    background: #f4f8fb;
+    padding: 30px 30px 30px 50px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.article-content li {
+    margin-bottom: 10px;
+}
+
+.article-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 30px 0;
+}
+
+.btn-back {
+    display: inline-block;
+    margin-top: 50px;
+    padding: 12px 30px;
+    background-color: #4C585B;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+.btn-back:hover {
+    background-color: #7E99A3;
+}
+
+/* 手機版調整 */
+@media (max-width: 768px) {
+    .article-container {
+        padding: 30px 20px;
+        margin: 20px;
+    }
+
+    .article-title {
+        font-size: 1.6rem;
+    }
+}

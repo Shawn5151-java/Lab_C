@@ -8,21 +8,13 @@
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/Footer.css">
     <link rel="stylesheet" href="./css/Login.css">
-    <link rel="stylesheet" href="./css/ShoppingCar.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="https://npmcdn.com/flatpickr/dist/l10n/zh-tw.js"></script>
+    <link rel="stylesheet" href="./css/Promotions.css">
     <link rel="icon" type="image/png" href="./img/newLOGO.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         body {
             margin: 0;
             font-family: "Microsoft JhengHei", Arial, sans-serif;
-        }
-
-        /* Container holding the image and the text */
-        .container {
-            position: relative;
         }
     </style>
 </head>
@@ -40,14 +32,14 @@
                 <ul class="drop-down-menu">
                     <li><a href="./Promotions.html">優惠活動</a></li>
                     <li>
-                    <li><a href="./Promotions.html">最新消息</a></li>
-                    <ul>
-                        <li><a href="./Car_model.html#all">所有車款</a></li>
-                        <li><a href="./Car_model.html#sec-normal">一般車型</a></li>
-                        <li><a href="./Car_model.html#sec-premium">尊榮車型</a></li>
-                        <li><a href="./Car_model.html#sec-suv">休旅車型</a></li>
-                        <li><a href="./Car_model.html#sec-ev">電動車型</a></li>
-                    </ul>
+                        <a href="./Car_model.html">車款介紹 ▼</a>
+                        <ul>
+                            <li><a href="./Car_model.html#all">所有車款</a></li>
+                            <li><a href="./Car_model.html#sec-normal">一般車型</a></li>
+                            <li><a href="./Car_model.html#sec-premium">尊榮車型</a></li>
+                            <li><a href="./Car_model.html#sec-suv">休旅車型</a></li>
+                            <li><a href="./Car_model.html#sec-ev">電動車型</a></li>
+                        </ul>
                     </li>
                     <li><a href="./FAQ.html">常見問題</a></li>
                     <li><a href="./Brand_story.html">品牌故事</a></li>
@@ -68,140 +60,63 @@
         </div>
     </div>
 
-    <div class="container">
-        <img src="./img/1122233.png" style="object-fit: cover; display: flex; width:100%; height: auto; ">
-    </div>
 
-    <div class="booking-grid">
-
-        <div class="booking-main">
-
-            <div id="step1" class="step-section active">
-                <h3>1. 確認預約車輛與時間</h3>
-                <div class="car-summary-card">
-                    <div class="car-img-box">
-                        <img id="selected-car-img" src="./car_img/altis/1717641892766577_1400_1200.jpg"
-                            alt="Selected Car">
-                    </div>
-                    <div class="car-info-box">
-                        <h2 id="selected-car-name" style="margin: 0 0 10px 0; color: #4C585B;">Toyota Altis</h2>
-
-                        <p id="selected-car-price-text" class="price-tag">NT$ 2,000 / 日</p>
-
-                        <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
-                        <div class="form-group date-group" style="margin-bottom: 15px;">
-                            <label style="display: block; margin-bottom: 5px; font-weight: bold;">取還車時間</label>
-                            <div class="datetime-wrapper" style="display: flex; gap: 10px;">
-                                <input type="text" class="date-input" id="pickup-date" placeholder="請選擇取車日期"
-                                    style="flex:1; padding: 8px;">
-                                <input type="text" class="date-input" id="return-date" placeholder="請選擇還車日期"
-                                    style="flex:1; padding: 8px;">
-                            </div>
-                            <p style="font-size: 14px; color: #666; margin-top: 5px;">*請選擇日期以計算總金額</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="text-align: right; margin-top: 20px;">
-                    <button onclick="nextStep(2)" class="next-btn">下一步：選擇加購項目 ➔</button>
-                </div>
+    <div>
+        <h2 class="title-style-1">優惠活動</h2>
+        <div class="card-promContent">
+            <div class="card">
+                <a href="#" class="prom-card">
+                    <img src="./img/promotion1.jpg">
+                    <h4>新會員首租7折</h4>
+                    <p>註冊立即享優惠，開啟您的第一次完美旅程。</p>
+                </a>
             </div>
-
-
-            <div id="step2" class="step-section">
-                <h3>2. 選擇加購項目</h3>
-                <div class="add-on-container" style="display: flex; gap: 20px;">
-                    <div class="add-on" data-price="150" data-mode="once">
-                        <img src="./img/original.jpg" alt="嬰兒車">
-                        <p>兒童安全座椅</p>
-                        <p>$150 / 次</p>
-                        <p><button onclick="toggleAddOn(this)">加購</button></p>
-                    </div>
-
-                    <div class="add-on" data-price="400" data-mode="daily">
-                        <img src="./img/Gemini_Generated_Image_2yicql2yicql2yic.png" alt="保險圖示">
-                        <p>超安心全險</p>
-                        <p>$400 / 日</p>
-                        <p><button onclick="toggleAddOn(this)">加購</button></p>
-                    </div>
-
-                    <div class="add-on" data-price="200" data-mode="once">
-                        <img src="./img/2024_12_06_1844171.jpeg" alt="行車紀錄器">
-                        <p>行車紀錄器</p>
-                        <p>$200 / 次</p>
-                        <p><button onclick="toggleAddOn(this)">加購</button></p>
-                    </div>
-                </div>
-
-                <div style="display: flex; justify-content: space-between; margin-top: 20px;">
-                    <button onclick="nextStep(1)" class="prev-btn">🠔 上一步</button>
-                    <button onclick="nextStep(3)" class="next-btn">下一步：填寫資料 ➔</button>
-                </div>
+            <div class="card">
+                <a href="#" class="prom-card">
+                    <img src="./img/promotion2.jpg">
+                    <h4>連假早鳥省 $2,000</h4>
+                    <p>提早 30 天預訂連續假期，保證有車再享高額折扣。</p>
+                </a>
             </div>
-
-            <div id="step3" class="step-section">
-                <h3>3. 填寫駕駛人資訊</h3>
-                <div class="login-hint">
-                    <span>(i) 已經是會員嗎？</span>
-                    <button onclick="document.getElementById('id01').style.display='block'" class="login-link-btn">
-                        [點此登入] 自動帶入資料
-                    </button>
-                </div>
-
-                <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
-
-                <div class="form-container">
-                    <div class="form-group">
-                        <label for="driver-name">駕駛人姓名 <span style="color:red;">*</span>：</label>
-                        <input type="text" id="driver-name" placeholder="請輸入真實姓名" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="driver-ID">身分證字號<span style="color:red;">*</span>：</label>
-                        <input type="text" id="driver-ID" placeholder="請輸入身分證字號" maxlength="10"
-                            onblur="validate_simple_ID()">
-                        <small id="id-msg-area" style="display: none; margin-top: 5px;"></small>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="driver-phone">聯絡電話 <span style="color:red;">*</span>：</label>
-                        <input type="tel" id="driver-phone" placeholder="請輸入手機號碼" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="driver-birthday">出生年月日<span style="color:red;">*</span>：</label>
-                        <input type="date" id="driver-birthday">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="driver-email">電子信箱 <span style="color:red;">*</span>：</label>
-                        <input type="email" id="driver-email" placeholder="用於接收訂單資訊" required>
-                    </div>
-                </div>
-
-                <div style="text-align: left; margin-top: 20px;">
-                    <button onclick="nextStep(2)" class="prev-btn">🠔 上一步</button>
-                </div>
+            <div class="card">
+                <a href="#" class="prom-card">
+                    <img src="./img/promotion3.jpg">
+                    <h4>純電體驗 85 折</h4>
+                    <p>感受未來科技，Tesla、Audi 電動車系全面優惠中。</p>
+                </a>
             </div>
-        </div>
-
-
-
-        <div class="booking-sidebar">
-            <div class="summary-card">
-                <h3>訂單摘要</h3>
-                <p>車款：<span id="summary-car-name">請選擇車輛</span></p>
-                <p>天數：<span id="summary-days">0</span> 天</p>
-                <h3 style="color: #b12b2b;">
-                    總計：NT$ <span id="summary-total">0</span>
-                </h3>
-                <button onclick="finish()"
-                    style="width:100%; padding:10px; background:#4C585B; color:white; border:none;">
-                    確認預約
-                </button>
+            <div class="card">
+                <a href="#" class="prom-card">
+                    <img src="./img/promotion4.jpg">
+                    <h4>當月壽星 租一送一</h4>
+                    <p>您的特別日子，飛瑞招待！租一天送一天，快樂加倍。</p>
+                </a>
             </div>
         </div>
     </div>
+
+    <div>
+        <h2 class="title-style-1">最新消息</h2>
+        <div class="card-promContent">
+            <div class="card">
+                <a href="#" class="prom-card">
+                    <img src="./img/porm02.jpg">
+                    <h4>安心守護｜全車系導入醫療級清消標準</h4>
+                    <p>您的健康是首要考量。即日起，每一輛還車皆執行臭氧殺菌與高頻接觸點深層清潔，打造無菌舒適座艙。</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="#" class="prom-card">
+                    <img src="./img/porm01.jpg">
+                    <h4>純電旗艦｜Audi e-tron GT 尊榮入列</h4>
+                    <p>德國工藝與未來科技的完美結合。引進 Audi 頂尖純電轎跑，讓您體驗靜謐與速度並存的極致駕馭感。</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
 
 
 
@@ -344,29 +259,20 @@
     </div>
 
     <script>
-
         function demoAlert(platform) {
             alert("您點擊了 " + platform + "！\n(這是作業用網站，並無實際連結)");
         }
-
-
         var loginModal = document.getElementById('id01');
         var signupModal = document.getElementById('id02');
-
-
         window.onclick = function (event) {
-
             if (event.target == loginModal) {
                 loginModal.style.display = "none";
             }
-
             if (event.target == signupModal) {
                 signupModal.style.display = "none";
             }
         }
     </script>
-
-    <script src="./js/ShoppingCar.js"></script>
 </body>
 
 </html>

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/Footer.css">
     <link rel="stylesheet" href="./css/Login.css">
+    <link rel="stylesheet" href="./css/Contact_us.css">
     <link rel="icon" type="image/png" href="./img/newLOGO.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
@@ -29,7 +30,7 @@
         <div>
             <nav>
                 <ul class="drop-down-menu">
-                    <li><a href="#">最新消息</a></li>
+                    <li><a href="./Promotions.html">優惠活動</a></li>
                     <li>
                         <a href="./Car_model.html">車款介紹 ▼</a>
                         <ul>
@@ -58,6 +59,116 @@
             </button>
         </div>
     </div>
+
+
+
+    <div class="contact-hero">
+        <div class="contact-hero-overlay"></div>
+        <div class="contact-hero-content">
+            <h2>聯絡我們</h2>
+            <p>有任何租車需求或疑問？歡迎隨時與我們聯繫，我們將竭誠為您服務。</p>
+        </div>
+    </div>
+
+    <div class="contact-container">
+
+        <div class="contact-info-box">
+            <h3>與我們聯繫</h3>
+            <p style="margin-bottom: 30px; color: #666;">
+                無論是車款諮詢、預約變更，還是道路救援，<br>飛瑞團隊隨時準備好為您解答。
+            </p>
+
+            <div class="info-item">
+                <i class="fa-solid fa-phone"></i>
+                <div>
+                    <h4>客服專線</h4>
+                    <p>0988-123-456</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="fa-solid fa-location-dot"></i>
+                <div>
+                    <h4>旗艦店地址</h4>
+                    <p>台中市南屯區公益路二段</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="fa-solid fa-clock"></i>
+                <div>
+                    <h4>營業時間</h4>
+                    <p>週一至週日 09:00 - 21:00</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="fa-brands fa-line" style="color: #06c755;"></i>
+                <div>
+                    <h4>官方 LINE</h4>
+                    <p>@FeiRuiCar (記得加@)</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="contact-form-box">
+            <h3>傳送訊息給我們</h3>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="cname">姓名 Name</label>
+                    <input type="text" id="cname" name="name" placeholder="請輸入您的姓名" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="cphone">電話 Phone</label>
+                    <input type="tel" id="cphone" name="phone" placeholder="請輸入聯絡電話" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="cemail">電子郵件 Email</label>
+                    <input type="email" id="cemail" name="email" placeholder="name@example.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="csubject">諮詢項目 Subject</label>
+                    <select id="csubject" name="subject">
+                        <option value="booking">預約租車</option>
+                        <option value="price">價格詢問</option>
+                        <option value="cooperate">企業長租</option>
+                        <option value="other">其他問題</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="cmessage">訊息內容 Message</label>
+                    <textarea id="cmessage" name="message" rows="5" placeholder="請詳細描述您的需求..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">發送訊息</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="map-section">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.6046756627685!2d120.64834731498897!3d24.15051498439366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d9670605555%3A0xf639a04130091811!2z5Y-w5Lit5biC5Y2X5bGv5Y2A5YWs55uK6Lev5LqM5q61!5e0!3m2!1szh-TW!2stw!4v1645000000000!5m2!1szh-TW!2stw"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <footer class="site-footer">
         <div class="footer-container">
@@ -193,22 +304,15 @@
     </div>
 
     <script>
-        // Footer 的按鈕功能
         function demoAlert(platform) {
             alert("您點擊了 " + platform + "！\n(這是作業用網站，並無實際連結)");
         }
-
-        // Modal 視窗控制 (登入 & 註冊)
         var loginModal = document.getElementById('id01');
         var signupModal = document.getElementById('id02');
-
-        // 當使用者點擊視窗的任何地方
         window.onclick = function (event) {
-            // 如果點到的是登入視窗的背景 -> 關閉登入
             if (event.target == loginModal) {
                 loginModal.style.display = "none";
             }
-            // 如果點到的是註冊視窗的背景 -> 關閉註冊
             if (event.target == signupModal) {
                 signupModal.style.display = "none";
             }
