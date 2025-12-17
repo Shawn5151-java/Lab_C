@@ -1,0 +1,150 @@
+.faqTitle {
+    position: relative;
+    background-image: url(../img/mario-gogh-VBLHICVh-lI-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    /* background-attachment: fixed; */
+    /* 【選用】視差滾動效果，讓背景固定不動 */
+    padding: 120px 20px;
+    text-align: center;
+    color: white;
+}
+
+.faqTitle-content {
+    position: relative;
+    /* 為了浮在遮罩上面 */
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 50px;
+}
+
+.faqMenu {
+    max-width: 900px;
+    margin: -40px auto 50px auto;
+    position: relative;
+    z-index: 10;
+    padding: 0 20px;
+}
+
+.faqQuestion-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: 80px
+}
+
+.faqNav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.faqNav li {
+    flex: 1;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.faqNav li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    border-color: #7E99A3;
+}
+
+.faqNav a {
+    display: block;
+    padding: 20px 0;
+    text-align: center;
+    text-decoration: none;
+    color: #555;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.faqNav a.faqMenuActive {
+    background-color: #7E99A3;
+    color: white;
+    border-radius: 7px;
+}
+
+.group-title {
+    color: #7E99A3;
+    border-left: 5px solid #7E99A3;
+    padding-left: 15px;
+    margin: 40px 0 20px 0;
+}
+
+/* --- 手機版 RWD (變成直立排列) --- */
+@media (max-width: 768px) {
+    .faqNav {
+        flex-direction: column;
+    }
+
+    .faqMenu {
+        margin-top: 20px;
+    }
+}
+
+
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+    background-color: #fff;
+    color: #444;
+    cursor: pointer;
+    padding: 20px;
+    width: 100%;
+    margin: 5px;
+    margin-bottom: 10px;
+    text-align: left;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: 0.3s;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.accordion:hover {
+    background-color: #f1f8fc;
+    color: #7E99A3;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    text-align: left;
+    border-radius: 0 0 8px 8px;
+    margin-bottom: 10px;
+    background-color: #f1efef;
+}
+
+.accordion:after {
+    content: '\02795';
+    /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2796";
+    /* Unicode character for "minus" sign (-) */
+}
+
+.question {
+    padding: 15px;
+}
