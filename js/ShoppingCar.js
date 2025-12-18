@@ -128,6 +128,21 @@ function nextStep(stepNumber) {
     document.getElementById("step" + stepNumber).classList.add("active");
 
     updateSummary();
+
+    document.querySelectorAll('.step-section').forEach(el => el.classList.remove('active'));
+    document.getElementById('step' + stepNumber).classList.add('active');
+    document.querySelectorAll('.step-indicator').forEach(el => el.classList.remove('active'));
+    
+
+    for (let i = 1; i <= stepNumber; i++) {
+        const indicator = document.getElementById('progress-' + i);
+        if (indicator) {
+            indicator.classList.add('active');
+        }
+    }
+
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function toggleAddOn(button) {
@@ -167,6 +182,8 @@ function validate_simple_ID() {
         idInput.classList.remove('valid');
         idInput.classList.add('invalid');
     }
+
+
 }
 
 // 修改 ShoppingCar.js 的 finish() 函式

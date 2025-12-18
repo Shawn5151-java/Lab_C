@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/Footer.css">
     <link rel="stylesheet" href="./css/Login.css">
+    <link rel="stylesheet" href="./css/Promotion_detail.css">
     <link rel="icon" type="image/png" href="./img/newLOGO.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="./css/Promotion_detail.css">
@@ -61,39 +62,46 @@
     </div>
 
 
-    <div class="article-container">
+   <div class="detail-container">
+        <div class="detail-wrapper">
+            
+            <div>
+                <div class="meta-row">
+                    <span id="page-tag"></span> 
+                    <span id="page-period"></span>
+                </div>
+                <h1 id="page-title"></h1>
+            </div>
 
-        <div class="article-header">
-            <span class="article-tag">優惠活動</span>
-            <span class="article-date">2025.01.01 發佈</span>
-            <h1 class="article-title">新會員首租 7 折！開啟您的第一次完美旅程</h1>
+            <div>
+                <img id="page-img" src="" style="display: block; background-color: #eee; min-height: 200px;">
+                
+                <p id="page-intro"></p>
+                
+                <div id="page-content">
+                    <p style="text-align: center; color: #999; padding: 50px;">
+                        <i class="fa-solid fa-spinner fa-spin"></i> 資料載入中...
+                    </p>
+                </div>
+            </div>
+
+            <div style="margin-top: 50px; text-align: center;">
+                <a href="./Promotions.html" class="btn-back">← 返回列表</a>
+            </div>
+            
         </div>
-
-        <div class="article-content">
-            <p class="lead">歡迎加入飛瑞租車的大家庭！為了慶祝您成為我們的一員，我們特別準備了專屬的見面禮。無論是週末的輕旅行，還是計畫已久的長途冒險，現在就是出發的最佳時機。</p>
-
-            <img src="./img/promotion1.jpg" class="article-img" alt="新會員優惠">
-
-            <h3>為什麼選擇飛瑞租車？</h3>
-            <p>我們深知，每一次的租車體驗都承載著對旅途的期待。因此，飛瑞堅持提供車齡 3 年內的優質新車，並在交車前執行嚴格的 18 項安全檢測與醫療級清潔。對於新朋友，我們更希望以最實惠的價格，讓您體驗所謂的「尊榮服務」。
-            </p>
-
-            <h3>活動詳情與辦法</h3>
-            <ul>
-                <li><strong>適用對象：</strong> 首次註冊且未曾於飛瑞租車消費之新會員。</li>
-                <li><strong>優惠內容：</strong> 首次租車不限車款、不限平假日，結帳金額直接享 <strong>7 折</strong> 優惠。</li>
-                <li><strong>適用車型：</strong> 全車系適用（包含一般房車、休旅車及尊榮車款）。</li>
-                <li><strong>預約方式：</strong> 線上預約時，系統將自動偵測會員資格並帶入折扣。</li>
-            </ul>
-
-            <h3>注意事項</h3>
-            <p>1. 本優惠每位會員帳號限使用一次，不可轉讓。<br>
-                2. 需於預約時完成身分驗證（上傳駕照與身分證）。<br>
-                3. 農曆春節期間（2025/01/28 - 2025/02/02）不適用此優惠。<br>
-                4. 飛瑞租車保有活動最終解釋與修改之權利。</p>
-        </div>
-        <a href="./Promotions.html" class="btn-back">← 返回列表</a>
     </div>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -115,11 +123,11 @@
             <div class="footer-column">
                 <h4>快速連結</h4>
                 <ul class="footer-links">
-                    <li><a href="#">最新消息</a></li>
+                    <li><a href="./Promotions.html">最新消息</a></li>
                     <li><a href="./Car_model.html">車款介紹</a></li>
                     <li><a href="./FAQ.html">常見問題</a></li>
                     <li><a href="./Brand_story.html">品牌故事</a></li>
-                    <li><a href="#">聯絡我們</a></li>
+                    <li><a href="./Contact_us.html">聯絡我們</a></li>
                     <li><a href="./test_2.html">隱私權政策</a></li>
                 </ul>
             </div>
@@ -253,6 +261,7 @@
             }
         }
     </script>
+    <script src="./js/Promotion_detail.js"></script>
     </body>
 
 </html>
