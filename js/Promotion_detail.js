@@ -48,7 +48,7 @@ const promotionsData = {
             <p>電動車不僅是交通工具，更是生活態度的展現。無論是 Tesla 的極簡科技，或是 Audi e-tron GT 的豪華工藝，皆能帶給您前所未有的駕駛感受。隨車附贈充電轉接設備與充電金，讓綠色移動更加無憂。</p>
             <h3>純電禮遇詳情</h3>
             <ul>
-                <li><strong>指定車款：</strong> Model 3 / Model Y / Audi e-tron GT。</li>
+                <li><strong>指定車款：</strong> Model 3 / Audi e-tron GT。</li>
                 <li><strong>推廣費率：</strong> 不分平假日，一律享定價 <strong>85 折</strong>。</li>
                 <li><strong>加值服務：</strong> 隨車附贈 $200 充電儲值卡。</li>
             </ul>

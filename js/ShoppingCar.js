@@ -17,8 +17,8 @@ const carDatabase = {
     'rav4': { name: 'Toyota RAV4', price: 3500, img: './car_img/RAV4/1706682310246251_1400_1200.jpg' },
     'kuga': { name: 'Ford Kuga', price: 3000, img: './car_img/Kuga/1727344014875547_1400_1200.jpg' },
     'rx350': { name: 'Lexus RX350', price: 4500, img: './car_img/RX350/1670308733508370_1400_1200.jpg' },
-    'modely': { name: 'Tesla Model 3', price: 7000, img: './car_img/model_3/1729837131080542_1400_1200.jpg' },
-    'etron': { name: 'Audi e-tron GT', price: 17000, img: './car_img/e_tron_gt/1646119068976980_1400_1200.jpg' },
+    'modely': { name: 'Tesla Model 3', price: 7000, img: './car_img/model_3/1729837131080542_1400_1200.jpg', isEV: true },
+    'etron': { name: 'Audi e-tron GT', price: 17000, img: './car_img/e_tron_gt/1646119068976980_1400_1200.jpg', isEV: true },
     's450': { name: 'Mercedes-Benz S450', price: 10000, img: './car_img/s450/1615173696839878_1400_1200.jpg' },
 };
 
@@ -29,30 +29,45 @@ let currentCarPrice = 0;
 //  2. 初始化邏輯 (Initialization)
 // ==========================================
 function initSelectedCar() {
-    // 1. 抓取網址上的 ?car=xxx 參數
     const urlParams = new URLSearchParams(window.location.search);
     const carId = urlParams.get('car');
 
-    // 2. 檢查是否有這個 ID 且資料庫有資料
     if (carId && carDatabase[carId]) {
         const car = carDatabase[carId];
 
-        // 3. 更新畫面上的文字與圖片
-        // 【修正】這裡的 ID 必須對應 HTML 裡的 ID
         const nameEl = document.getElementById('selected-car-name');
-        const priceEl = document.getElementById('selected-car-price-text'); // 修正 ID
+        const priceEl = document.getElementById('selected-car-price-text');
         const imgEl = document.getElementById('selected-car-img');
-        const sidebarNameEl = document.getElementById('summary-car-name'); // 側邊欄車名
+        const sidebarNameEl = document.getElementById('summary-car-name');
 
-        if(nameEl) nameEl.innerText = car.name;
-        if(sidebarNameEl) sidebarNameEl.innerText = car.name; // 同步更新側邊欄
-        if(priceEl) priceEl.innerText = `NT$ ${car.price.toLocaleString()} / 日`;
-        if(imgEl) imgEl.src = car.img;
+        if (nameEl) nameEl.innerText = car.name;
+        if (sidebarNameEl) sidebarNameEl.innerText = car.name;
+        if (imgEl) imgEl.src = car.img;
 
-        // 4. 記錄價格供計算用
-        currentCarPrice = car.price;
-        
-        // 5. 觸發一次金額更新
+        // --- 修改開始：判斷是否有優惠 ---
+
+        if (car.isEV === true) {
+            // 1. 如果是電動車，計算 85 折 (Math.floor 去除小數點)
+            const discountPrice = Math.floor(car.price * 0.85);
+
+            // 2. 更新全域價格變數 (這樣後面的 updateSummary 計算總金額就會自動變便宜)
+            currentCarPrice = discountPrice;
+
+            // 3. 更新畫面文字：顯示原價被劃掉，顯示優惠價
+            if (priceEl) {
+                priceEl.innerHTML = `
+                    <span style="text-decoration: line-through; color: #999; font-size: 18px;">NT$ ${car.price.toLocaleString()}</span>
+                    <span style="color: #b12b2b; font-weight: bold;">NT$ ${discountPrice.toLocaleString()} / 日 (電動車85折)</span>
+                `;
+            }
+        } else {
+            // 不是電動車，維持原價
+            currentCarPrice = car.price;
+            if (priceEl) priceEl.innerText = `NT$ ${car.price.toLocaleString()} / 日`;
+        }
+
+        // --- 修改結束 ---
+
         updateSummary();
     } else {
         console.warn("未指定車款或車款不存在");
@@ -82,7 +97,7 @@ function nextStep(stepNumber) {
 function updateSummary() {
     const pickupDateStr = document.getElementById('pickup-date').value;
     const returnDateStr = document.getElementById('return-date').value;
-    
+
     let days = 0;
 
     // 計算天數
@@ -112,8 +127,8 @@ function updateSummary() {
     const daysEl = document.getElementById('summary-days');
     const totalEl = document.getElementById('summary-total'); // 修正 ID (HTML 是 summary-total)
 
-    if(daysEl) daysEl.innerText = days;
-    if(totalEl) totalEl.innerText = finalTotal.toLocaleString();
+    if (daysEl) daysEl.innerText = days;
+    if (totalEl) totalEl.innerText = finalTotal.toLocaleString();
 }
 
 // 加購項目切換
@@ -121,11 +136,11 @@ function updateSummary() {
 function toggleAddOn(btnElement) {
     // 找到按鈕所在的卡片容器 (父層 div)
     const card = btnElement.closest('.add-on');
-    
+
     if (card) {
         // 切換選取狀態
         card.classList.toggle('selected');
-        
+
         // 改變按鈕外觀 (選用)
         if (card.classList.contains('selected')) {
             btnElement.innerText = "已加購";
@@ -136,7 +151,7 @@ function toggleAddOn(btnElement) {
             btnElement.style.backgroundColor = ""; // 恢復原狀
             btnElement.style.color = "";
         }
-        
+
         // 重新計算總金額
         updateSummary();
     }
@@ -147,7 +162,7 @@ function validate_simple_ID() {
     const element = document.getElementById('driver-ID');
     const id = element.value;
     const regex = /^[A-Z][0-9]{9}$/;
-    
+
     if (!regex.test(id)) {
         alert("身分證格式錯誤！請輸入 1 個大寫英文字母 + 9 個數字");
         element.style.border = "2px solid red";
@@ -158,27 +173,36 @@ function validate_simple_ID() {
 
 // 完成預約
 function finish() {
-    const name = document.getElementById('driver-name').value;
-    const phone = document.getElementById('driver-phone').value;
-    const idNumber = document.getElementById('driver-ID').value;
-    
-    if (!name || !phone || !idNumber) {
-        alert("請填寫完整聯絡人資料！");
-        return;
+    // 1. 取得所有欄位資料
+    const name = document.getElementById('driver-name').value.trim();
+    const id = document.getElementById('driver-ID').value.trim();
+    const phone = document.getElementById('driver-phone').value.trim();
+    const birthday = document.getElementById('driver-birthday').value;
+    const email = document.getElementById('driver-email').value.trim();
+
+    // 2. 檢查是否有任何一個欄位是空的
+    if (!name || !id || !phone || !birthday || !email) {
+        alert("⚠️ 資料尚未填寫完整！\n請檢查：姓名、身分證、電話、生日與 Email 是否都已填寫。");
+        return; // 中斷程式，不執行後續動作
     }
 
-    // 【修正】抓取正確的總金額 ID
+    // 3. 取得訂單資訊 (為了顯示在 Alert 中)
     const totalText = document.getElementById('summary-total').innerText;
     const carName = document.getElementById('selected-car-name').innerText;
-    
-    alert(`🎉 預約成功！\n\n感謝您的預訂：${name}\n車款：${carName}\n總金額：NT$ ${totalText}\n\n我們將盡快與您聯繫確認取車細節。`);
+
+    // 4. 跳出成功訊息
+    // 注意：瀏覽器會在使用者按下「確定」後，才會執行下一行程式碼
+    alert(`🎉 預約成功！\n\n感謝您的預訂：${name}\n車款：${carName}\n總金額：NT$ ${totalText}\n\n按下確定後將跳轉回首頁。`);
+
+    // 5. 跳轉回首頁 (根據你的 HTML logo 連結，首頁是 test_1.html)
+    window.location.href = "./test_1.html";
 }
 
 // ==========================================
 //  4. 程式入口
 // ==========================================
 document.addEventListener('DOMContentLoaded', function () {
-    
+
     initSelectedCar();
 
     if (typeof flatpickr !== 'undefined') {
@@ -202,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 updateSummary();
             }
         });
-        
+
         // 接收首頁傳來的日期
         const urlParams = new URLSearchParams(window.location.search);
         const urlPickup = urlParams.get('pickup');

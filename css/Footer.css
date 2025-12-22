@@ -1,14 +1,13 @@
-/* --- 頁尾 (Footer) 設定 - 淺色優雅版 --- */
+/* --- 頁尾 (Footer) 設定 - 科技簡約版 --- */
 .site-footer {
-    background-color: #F4EDD3;
-    /* 【修改】改為奶油白背景 */
-    color: #4C585B;
-    /* 【修改】文字改為岩石灰 */
+    /* 【修改】改為極淺灰藍背景 (配合科技感) */
+    background-color: #f0f4f8; 
+    color: #2c3e50; /* 深藍黑文字 */
     padding: 60px 0 20px 0;
     margin-top: 80px;
     font-family: "Microsoft JhengHei", sans-serif;
-    border-top: 5px solid #4C585B;
-    /* (選用) 加一條深色頂部邊框，增加層次感 */
+    /* 頂部線條改為青色 */
+    border-top: 5px solid #00a8cc; 
 }
 
 .footer-container {
@@ -31,8 +30,7 @@
     font-size: 24px;
     margin-top: 0;
     margin-bottom: 20px;
-    color: #4C585B;
-    /* 【修改】深色文字 */
+    color: #0056b3; /* 品牌深藍 */
     letter-spacing: 1px;
     font-weight: bold;
 }
@@ -41,10 +39,9 @@
     font-size: 18px;
     margin-top: 0;
     margin-bottom: 20px;
-    color: #4C585B;
-    /* 【修改】深色文字 */
-    border-bottom: 2px solid #7E99A3;
-    /* 莫蘭迪藍裝飾線維持不變 */
+    color: #2c3e50;
+    /* 底部裝飾線改為漸層青色 */
+    border-bottom: 3px solid #00a8cc; 
     display: inline-block;
     padding-bottom: 5px;
 }
@@ -52,8 +49,7 @@
 /* 內容文字 */
 .footer-desc {
     line-height: 1.8;
-    color: #5c6b70;
-    /* 【修改】稍微淺一點的深灰，增加層次 */
+    color: #555;
     font-size: 14px;
     font-weight: 500;
 }
@@ -71,15 +67,13 @@
 
 .footer-links a {
     text-decoration: none;
-    color: #4C585B;
-    /* 【修改】深色連結 */
+    color: #2c3e50;
     transition: color 0.3s;
     font-weight: 500;
 }
 
 .footer-links a:hover {
-    color: #7E99A3;
-    /* 滑鼠移過去變藍色 */
+    color: #00a8cc; /* Hover 變青色 */
     padding-left: 5px;
 }
 
@@ -90,33 +84,27 @@
     margin: 0;
 }
 
-/* --- 聯絡資訊列表 (優化版) --- */
 .contact-info li {
     margin-bottom: 15px;
     display: flex;
     align-items: flex-start;
-    /* 讓圖標對齊文字頂部 (若文字換行比較好看) */
     gap: 12px;
-    color: #4C585B;
+    color: #2c3e50;
 }
 
-/* 左側小圖標 (地址/電話/時間) */
+/* 左側小圖標 */
 .contact-info .icon {
     font-size: 18px;
-    color: #7E99A3;
-    /* 改用「莫蘭迪藍」讓圖標跳出來，增加層次 */
+    color: #00a8cc; /* 青色圖標 */
     margin-top: 3px;
-    /* 微調垂直位置 */
     width: 20px;
-    /* 固定寬度確保文字對齊 */
     text-align: center;
 }
 
-/* --- 社群按鈕 (圓形圖標版) --- */
+/* --- 社群按鈕 --- */
 .social-buttons {
     display: flex;
     gap: 15px;
-    /* 按鈕之間的距離 */
     margin-top: 25px;
 }
 
@@ -125,35 +113,22 @@
     justify-content: center;
     align-items: center;
     width: 45px;
-    /* 設定寬度 */
     height: 45px;
-    /* 設定高度 */
     border-radius: 50%;
-    /* 變成正圓形 */
-
-    background-color: transparent;
-    /* 背景透明 */
-    border: 2px solid #4C585B;
-    /* 深色邊框 */
-    color: #4C585B;
-    /* 圖標顏色 */
-
+    background-color: white; /* 白底 */
+    border: 2px solid #0056b3; /* 深藍框 */
+    color: #0056b3; /* 深藍圖標 */
     text-decoration: none;
     font-size: 20px;
-    /* 圖標大小 */
     transition: all 0.3s ease;
 }
 
-/* 滑鼠移過去的效果 */
 .social-btn:hover {
-    background-color: #4C585B;
-    /* 背景變深色 */
-    color: #F4EDD3;
-    /* 圖標變奶油白 */
+    background-color: #0056b3; /* 變深藍底 */
+    color: white; /* 白圖標 */
+    border-color: #0056b3;
     transform: translateY(-5px);
-    /* 往上浮起 */
-    box-shadow: 0 5px 15px rgba(76, 88, 91, 0.3);
-    /* 加陰影 */
+    box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3); /* 藍色光暈 */
 }
 
 /* 底部版權條 */
@@ -161,11 +136,9 @@
     text-align: center;
     margin-top: 50px;
     padding-top: 20px;
-    /* 【修改】分隔線改為半透明的深色 */
-    border-top: 1px solid rgba(76, 88, 91, 0.2);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
     font-size: 12px;
-    color: #666;
-    /* 【修改】深灰色文字 */
+    color: #888;
     line-height: 1.6;
 }
 
@@ -183,7 +156,7 @@
 
 /* 回到頂部按鈕樣式 */
 #myBtn {
-    visibility: hidden; /* 預設隱藏 */
+    visibility: hidden;
     opacity: 0;
     position: fixed;
     bottom: 20px;
@@ -191,17 +164,17 @@
     z-index: 99;
     border: none;
     outline: none;
-    background-color: #7E99A3; /* 莫蘭迪藍 */
+    background-color: #00a8cc; /* 青色按鈕 */
     color: white;
     cursor: pointer;
     padding: 15px;
     border-radius: 50%;
     font-size: 18px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0, 168, 204, 0.4);
     transition: all 0.3s;
 }
 
 #myBtn:hover {
-    background-color: #4C585B; /* 岩石灰 */
+    background-color: #0056b3; /* Hover 變深藍 */
     transform: translateY(-3px);
 }
